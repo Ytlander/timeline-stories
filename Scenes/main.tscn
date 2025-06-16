@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://d4llv7opqcv4p"]
+
+[ext_resource type="Script" uid="uid://b6l8h1btlsupw" path="res://Scripts/story_card.gd" id="1_bo1nx"]
+[ext_resource type="Texture2D" uid="uid://b5dbyjlcvb8y" path="res://icon.svg" id="2_8gbba"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jjvhh"]
+size = Vector2(118, 120)
+
+[node name="Main" type="Node2D"]
+
+[node name="Story_Card" type="Area2D" parent="."]
+script = ExtResource("1_bo1nx")
+
+[node name="Icon" type="Sprite2D" parent="Story_Card"]
+texture = ExtResource("2_8gbba")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Story_Card"]
+shape = SubResource("RectangleShape2D_jjvhh")
+
+[connection signal="input_event" from="Story_Card" to="Story_Card" method="_on_input_event"]
