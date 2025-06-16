@@ -1,20 +1,59 @@
-[gd_scene load_steps=4 format=3 uid="uid://d4llv7opqcv4p"]
+[gd_scene load_steps=5 format=3 uid="uid://d4llv7opqcv4p"]
 
 [ext_resource type="Script" uid="uid://b6l8h1btlsupw" path="res://Scripts/story_card.gd" id="1_bo1nx"]
-[ext_resource type="Texture2D" uid="uid://b5dbyjlcvb8y" path="res://icon.svg" id="2_8gbba"]
+[ext_resource type="Theme" uid="uid://gtweqjsmt5k" path="res://default_ui_theme.tres" id="2_8gbba"]
+[ext_resource type="Texture2D" uid="uid://fplbe2l36ohx" path="res://Assets/Sprites/triangle_icon_ph.png" id="2_bo1nx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jjvhh"]
-size = Vector2(118, 120)
+size = Vector2(97, 148)
 
 [node name="Main" type="Node2D"]
 
 [node name="Story_Card" type="Area2D" parent="."]
+position = Vector2(65, 81)
 script = ExtResource("1_bo1nx")
-
-[node name="Icon" type="Sprite2D" parent="Story_Card"]
-texture = ExtResource("2_8gbba")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Story_Card"]
 shape = SubResource("RectangleShape2D_jjvhh")
+
+[node name="PanelContainer" type="PanelContainer" parent="Story_Card"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -49.0
+offset_top = -76.0
+offset_right = 51.0
+offset_bottom = 74.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("2_8gbba")
+
+[node name="MarginContainer" type="MarginContainer" parent="Story_Card/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Story_Card/PanelContainer/MarginContainer"]
+custom_minimum_size = Vector2(100, 150)
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Story_Card/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 28
+text = "Test"
+fit_content = true
+
+[node name="TextureRect" type="TextureRect" parent="Story_Card/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_bo1nx")
+expand_mode = 4
+stretch_mode = 5
 
 [connection signal="input_event" from="Story_Card" to="Story_Card" method="_on_input_event"]

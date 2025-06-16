@@ -1,4 +1,4 @@
-extends Area2D
+extends Node2D
 
 @export var click_to_drop: bool = false
 
