@@ -33,8 +33,6 @@ text = "Three
 Lines
 of Text"
 
-[connection signal="area_entered" from="Card Manager/Story_Card" to="Card Manager/Story_Card" method="_on_area_entered"]
-
 [editable path="Card Manager/Story_Card4"]
 [editable path="Card Manager/Story_Card2"]
 [editable path="Card Manager/Story_Card3"]
