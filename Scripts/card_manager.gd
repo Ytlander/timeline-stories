@@ -42,7 +42,7 @@ func check_overlapping_cards():
 ## logic in the physics process loop.
 func _input(event):
 	if Input.is_action_just_pressed("left_click"):
-		await get_tree().create_timer(0.001).timeout #If I don't have a delay the array will be empty, what is a more elegant solution?
+		await get_tree().process_frame #Need to wait for the clicked_cards array to populate
 		if !clicked_cards.is_empty():
 			if clicked_cards.size() > 1:
 				dragged_card = get_highest_z_level_card(clicked_cards)
