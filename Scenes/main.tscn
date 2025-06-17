@@ -1,36 +1,40 @@
-[gd_scene load_steps=2 format=3 uid="uid://d4llv7opqcv4p"]
+[gd_scene load_steps=3 format=3 uid="uid://d4llv7opqcv4p"]
 
 [ext_resource type="PackedScene" uid="uid://da3vfbn325gkk" path="res://Scenes/story_card.tscn" id="1_jjgbg"]
+[ext_resource type="Script" uid="uid://cxkgkg0ts864s" path="res://Scripts/card_manager.gd" id="2_bo1nx"]
 
 [node name="Main" type="Node2D"]
 
-[node name="Story_Card" parent="." instance=ExtResource("1_jjgbg")]
-position = Vector2(65, 81)
+[node name="Card Manager" type="Node2D" parent="."]
+script = ExtResource("2_bo1nx")
 
-[node name="Story_Card4" parent="." instance=ExtResource("1_jjgbg")]
-position = Vector2(563, 144)
+[node name="Story_Card" parent="Card Manager" instance=ExtResource("1_jjgbg")]
+position = Vector2(201, 175)
 
-[node name="RichTextLabel" parent="Story_Card4/PanelContainer/MarginContainer/VBoxContainer" index="0"]
+[node name="Story_Card4" parent="Card Manager" instance=ExtResource("1_jjgbg")]
+position = Vector2(572, 164)
+
+[node name="RichTextLabel" parent="Card Manager/Story_Card4/PanelContainer/MarginContainer/VBoxContainer" index="0"]
 text = "Maxtexton
 first line"
 
-[node name="Story_Card2" parent="." instance=ExtResource("1_jjgbg")]
-position = Vector2(236, 145)
+[node name="Story_Card2" parent="Card Manager" instance=ExtResource("1_jjgbg")]
+position = Vector2(245, 165)
 
-[node name="RichTextLabel" parent="Story_Card2/PanelContainer/MarginContainer/VBoxContainer" index="0"]
+[node name="RichTextLabel" parent="Card Manager/Story_Card2/PanelContainer/MarginContainer/VBoxContainer" index="0"]
 text = "Two
 Lines"
 
-[node name="Story_Card3" parent="." instance=ExtResource("1_jjgbg")]
-position = Vector2(413, 141)
+[node name="Story_Card3" parent="Card Manager" instance=ExtResource("1_jjgbg")]
+position = Vector2(422, 161)
 
-[node name="RichTextLabel" parent="Story_Card3/PanelContainer/MarginContainer/VBoxContainer" index="0"]
+[node name="RichTextLabel" parent="Card Manager/Story_Card3/PanelContainer/MarginContainer/VBoxContainer" index="0"]
 text = "Three
 Lines
 of Text"
 
-[connection signal="area_entered" from="Story_Card" to="Story_Card" method="_on_area_entered"]
+[connection signal="area_entered" from="Card Manager/Story_Card" to="Card Manager/Story_Card" method="_on_area_entered"]
 
-[editable path="Story_Card4"]
-[editable path="Story_Card2"]
-[editable path="Story_Card3"]
+[editable path="Card Manager/Story_Card4"]
+[editable path="Card Manager/Story_Card2"]
+[editable path="Card Manager/Story_Card3"]

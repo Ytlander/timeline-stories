@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://da3vfbn325gkk"]
 
-[ext_resource type="Script" uid="uid://b6l8h1btlsupw" path="res://Scripts/story_card.gd" id="1_cxbvt"]
+[ext_resource type="Script" uid="uid://bfgpq3obygaei" path="res://Scripts/story_card.gd" id="1_cxbvt"]
 [ext_resource type="Theme" uid="uid://gtweqjsmt5k" path="res://default_ui_theme.tres" id="2_8h8ol"]
 [ext_resource type="Texture2D" uid="uid://fplbe2l36ohx" path="res://Assets/Sprites/triangle_icon_ph.png" id="3_lev7e"]
 
@@ -30,6 +30,7 @@ theme = ExtResource("2_8h8ol")
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 40
 theme_override_constants/margin_right = 5
@@ -38,6 +39,7 @@ theme_override_constants/margin_bottom = 5
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
 custom_minimum_size = Vector2(100, 150)
 layout_mode = 2
+mouse_filter = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -58,6 +60,7 @@ mouse_filter = 2
 [node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("3_lev7e")
 expand_mode = 1
 stretch_mode = 5
