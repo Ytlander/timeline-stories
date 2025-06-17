@@ -1,5 +1,7 @@
 extends Node2D
 
+@export var click_to_drop: bool = false
+
 var clicked_cards: Array
 var dragged_card: Area2D
 var lerp_speed: int = 25
@@ -12,9 +14,15 @@ func _physics_process(delta):
 			check_overlapping_cards()
 			dragged_card.global_position = lerp(dragged_card.global_position, get_global_mouse_position(), lerp_speed * delta)
 		
-		if Input.is_action_just_released("left_click"):
-			dragged_card = null
-			clicked_cards.clear()
+		if click_to_drop == false:
+			if Input.is_action_just_released("left_click"):
+				dragged_card = null
+				clicked_cards.clear()
+		
+		if Input.is_action_just_pressed("left_click"):
+			if click_to_drop && dragged_card != null:
+				dragged_card = null
+				clicked_cards.clear()
 
 func check_overlapping_cards():
 		var overlapping_cards = dragged_card.get_overlapping_areas()
