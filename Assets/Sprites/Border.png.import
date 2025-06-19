@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://w2grd57oclji"
-path="res://.godot/imported/Border-1.png-2e310a82c7e2295798548d2b51bb9632.ctex"
+uid="uid://dksli1cdqotyf"
+path="res://.godot/imported/Border.png-92e08c413cb5d7091b54315b80696d04.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Border-1.png"
-dest_files=["res://.godot/imported/Border-1.png-2e310a82c7e2295798548d2b51bb9632.ctex"]
+source_file="res://Assets/Sprites/Border.png"
+dest_files=["res://.godot/imported/Border.png-92e08c413cb5d7091b54315b80696d04.ctex"]
 
 [params]
 
