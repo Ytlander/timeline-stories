@@ -35,7 +35,6 @@ of Text"
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="EventText" type="PanelContainer" parent="CanvasLayer"]
-visible = false
 anchors_preset = 11
 anchor_left = 1.0
 anchor_right = 1.0
@@ -52,7 +51,7 @@ script = ExtResource("4_kry3j")
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/EventText"]
 layout_mode = 2
 theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 25
+theme_override_constants/margin_top = 35
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 25
 
@@ -67,10 +66,11 @@ theme_override_font_sizes/normal_font_size = 32
 text = "Lorem Ipsum"
 scroll_active = false
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="spacer" type="Control" parent="CanvasLayer/EventText/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 35)
 layout_mode = 2
-size_flags_vertical = 3
 
 [node name="Text" type="RichTextLabel" parent="CanvasLayer/EventText/MarginContainer/VBoxContainer"]
 layout_mode = 2
