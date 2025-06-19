@@ -9,14 +9,10 @@
 script = ExtResource("2_bo1nx")
 
 [node name="Story_Card" parent="Card Manager" instance=ExtResource("1_jjgbg")]
-position = Vector2(201, 175)
+position = Vector2(111, 234)
 
 [node name="Story_Card4" parent="Card Manager" instance=ExtResource("1_jjgbg")]
-position = Vector2(572, 164)
-
-[node name="RichTextLabel" parent="Card Manager/Story_Card4/PanelContainer/MarginContainer/VBoxContainer" index="0"]
-text = "Maxtexton
-first line"
+position = Vector2(569, 203)
 
 [node name="Story_Card2" parent="Card Manager" instance=ExtResource("1_jjgbg")]
 position = Vector2(245, 165)
@@ -33,6 +29,5 @@ text = "Three
 Lines
 of Text"
 
-[editable path="Card Manager/Story_Card4"]
 [editable path="Card Manager/Story_Card2"]
 [editable path="Card Manager/Story_Card3"]
