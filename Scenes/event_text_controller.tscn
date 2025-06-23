@@ -1,0 +1,69 @@
+[gd_scene load_steps=4 format=3 uid="uid://ddyng28usspt6"]
+
+[ext_resource type="Theme" uid="uid://gtweqjsmt5k" path="res://default_ui_theme.tres" id="1_wgij7"]
+[ext_resource type="Script" uid="uid://c8dbb4t4hwrdv" path="res://Scripts/event_text.gd" id="2_6a6rj"]
+[ext_resource type="FontFile" uid="uid://bk45soa0k4vp7" path="res://Assets/Fonts/PlayfairDisplay-Regular.ttf" id="3_fnanm"]
+
+[node name="EventTextController" type="Control"]
+layout_mode = 3
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -209.0
+offset_top = 334.0
+offset_right = -209.0
+offset_bottom = -314.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="EventText" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -223.0
+offset_top = -313.0
+offset_right = 182.0
+offset_bottom = 310.0
+grow_horizontal = 0
+grow_vertical = 2
+theme = ExtResource("1_wgij7")
+script = ExtResource("2_6a6rj")
+
+[node name="MarginContainer" type="MarginContainer" parent="EventText"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 35
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="EventText/MarginContainer"]
+layout_mode = 2
+
+[node name="Header" type="RichTextLabel" parent="EventText/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+theme_override_font_sizes/normal_font_size = 32
+text = "Lorem Ipsum"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="spacer" type="Control" parent="EventText/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+
+[node name="Text" type="RichTextLabel" parent="EventText/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 20.0
+theme_override_fonts/normal_font = ExtResource("3_fnanm")
+theme_override_font_sizes/normal_font_size = 16
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.d
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+fit_content = true
+scroll_active = false
+horizontal_alignment = 3

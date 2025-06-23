@@ -3,12 +3,15 @@ extends Node2D
 @export var click_to_drop: bool = false
 
 var clicked_cards: Array
-var dragged_card: Area2D
+var right_clicked_cards: Array
+var card_to_open: Area2D
+var dragged_card: Area2D = null
 var lerp_speed: int = 25
 var mouse_offset: Vector2
 
 func _ready():
 	EventBus.card_clicked.connect(_on_card_clicked)
+	EventBus.card_right_clicked.connect(_on_card_right_clicked)
 
 func _physics_process(delta):
 		if dragged_card != null:
@@ -52,6 +55,22 @@ func _input(event):
 		if dragged_card:
 			var mouse_position = get_global_mouse_position()
 			mouse_offset = mouse_position - dragged_card.global_position
+	
+	##Getting the top card when right clicking a stack
+	##Sends a signal that we have a card that we want to open
+	##This signal is received by the Animation Controller and the Event Text Controller
+	if Input.is_action_just_pressed("right_click"):
+		await  get_tree().process_frame #Need to wait for the right_clicked_cards array to populate
+		if !right_clicked_cards.is_empty():
+			if right_clicked_cards.size() > 1:
+				card_to_open = get_highest_z_level_card(right_clicked_cards)
+			else:
+				card_to_open = right_clicked_cards[0]
+		if card_to_open:
+			EventBus.display_text.emit(card_to_open)
+			right_clicked_cards.clear()
+			card_to_open = null
+
 
 ##This sorts an array based on Z index. Maybe move this into a utility function in the future? Could be used for multiple things. 
 func get_highest_z_level_card(cards: Array):
@@ -62,3 +81,7 @@ func get_highest_z_level_card(cards: Array):
 ##This will fire once for every overlapping card that is clicked on. Therefore we save all the cards in an array	
 func _on_card_clicked(card):
 	clicked_cards.append(card)
+
+func _on_card_right_clicked(card):
+	if dragged_card == null:
+		right_clicked_cards.append(card)
