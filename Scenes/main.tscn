@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://d4llv7opqcv4p"]
+[gd_scene load_steps=5 format=3 uid="uid://d4llv7opqcv4p"]
 
 [ext_resource type="PackedScene" uid="uid://da3vfbn325gkk" path="res://Scenes/story_card.tscn" id="1_jjgbg"]
 [ext_resource type="Script" uid="uid://cxkgkg0ts864s" path="res://Scripts/card_manager.gd" id="2_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://ddyng28usspt6" path="res://Scenes/event_text_controller.tscn" id="3_8gbba"]
 [ext_resource type="Script" uid="uid://bxsr1lvutq7ve" path="res://Scripts/animation_controller.gd" id="4_jjvhh"]
-[ext_resource type="Script" uid="uid://cams1j3yq3vv3" path="res://Scripts/event_text_controller.gd" id="4_kry3j"]
 
 [node name="Main" type="Node2D"]
 
@@ -12,19 +11,15 @@
 script = ExtResource("2_bo1nx")
 
 [node name="Story_Card" parent="Card Manager" instance=ExtResource("1_jjgbg")]
-position = Vector2(111, 234)
 
 [node name="Story_Card4" parent="Card Manager" instance=ExtResource("1_jjgbg")]
-position = Vector2(581, 152)
 
 [node name="Story_Card2" parent="Card Manager" instance=ExtResource("1_jjgbg")]
-position = Vector2(245, 165)
 
 [node name="CardHeader" parent="Card Manager/Story_Card2/PanelContainer/MarginContainer/VBoxContainer" index="0"]
 text = "test"
 
 [node name="Story_Card3" parent="Card Manager" instance=ExtResource("1_jjgbg")]
-position = Vector2(422, 161)
 
 [node name="CardHeader" parent="Card Manager/Story_Card3/PanelContainer/MarginContainer/VBoxContainer" index="0"]
 text = "user interface"
@@ -32,7 +27,6 @@ text = "user interface"
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="EventTextController" parent="CanvasLayer" instance=ExtResource("3_8gbba")]
-script = ExtResource("4_kry3j")
 
 [node name="AnimationController" type="Node" parent="."]
 script = ExtResource("4_jjvhh")

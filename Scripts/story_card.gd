@@ -1,4 +1,6 @@
 extends Area2D
+class_name Card
+
 
 @onready var card_header = $PanelContainer/MarginContainer/VBoxContainer/CardHeader
 

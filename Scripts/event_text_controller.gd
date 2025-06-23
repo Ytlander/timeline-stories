@@ -8,4 +8,4 @@ func _ready():
 	
 func _on_display_text(card):
 	self.header.text = card.card_header.text
-	#Inject text here when that is implemented on card
+	#Inject text body here when that is implemented on card
