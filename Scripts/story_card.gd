@@ -1,8 +1,11 @@
 extends Area2D
 class_name Card
 
-
 @onready var card_header = $PanelContainer/MarginContainer/VBoxContainer/CardHeader
+@onready var selected_sprite = $SelectedSprite
+
+func _ready():
+	selected_sprite.visible = false
 
 ##Tells the Card Manager that the card has been clicked
 func _on_input_event(viewport, event, shape_idx):

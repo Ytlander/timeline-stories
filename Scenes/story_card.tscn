@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://da3vfbn325gkk"]
+[gd_scene load_steps=6 format=3 uid="uid://da3vfbn325gkk"]
 
 [ext_resource type="Script" uid="uid://bfgpq3obygaei" path="res://Scripts/story_card.gd" id="1_cxbvt"]
 [ext_resource type="Theme" uid="uid://gtweqjsmt5k" path="res://default_ui_theme.tres" id="2_8h8ol"]
 [ext_resource type="Texture2D" uid="uid://fplbe2l36ohx" path="res://Assets/Sprites/triangle_icon_ph.png" id="3_lev7e"]
+[ext_resource type="Texture2D" uid="uid://kd7p8hou1dcu" path="res://Assets/Sprites/selected.png" id="4_8h8ol"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jjvhh"]
 size = Vector2(126, 192)
@@ -68,6 +69,11 @@ stretch_mode = 5
 layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 2
+
+[node name="SelectedSprite" type="Sprite2D" parent="."]
+position = Vector2(1.19209e-06, 1.49999)
+scale = Vector2(0.71, 1.105)
+texture = ExtResource("4_8h8ol")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]
