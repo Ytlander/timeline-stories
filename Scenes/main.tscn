@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://d4llv7opqcv4p"]
+[gd_scene load_steps=5 format=3 uid="uid://d4llv7opqcv4p"]
 
 [ext_resource type="PackedScene" uid="uid://da3vfbn325gkk" path="res://Scenes/story_card.tscn" id="1_jjgbg"]
 [ext_resource type="Script" uid="uid://cxkgkg0ts864s" path="res://Scripts/card_manager.gd" id="2_bo1nx"]
-[ext_resource type="Theme" uid="uid://gtweqjsmt5k" path="res://default_ui_theme.tres" id="3_8gbba"]
-[ext_resource type="FontFile" uid="uid://bk45soa0k4vp7" path="res://Assets/Fonts/PlayfairDisplay-Regular.ttf" id="4_jjvhh"]
-[ext_resource type="Script" uid="uid://c8dbb4t4hwrdv" path="res://Scripts/event_text.gd" id="4_kry3j"]
+[ext_resource type="PackedScene" uid="uid://ddyng28usspt6" path="res://Scenes/event_text_controller.tscn" id="3_8gbba"]
+[ext_resource type="Script" uid="uid://bxsr1lvutq7ve" path="res://Scripts/animation_controller.gd" id="4_jjvhh"]
 
 [node name="Main" type="Node2D"]
 
@@ -12,77 +11,41 @@
 script = ExtResource("2_bo1nx")
 
 [node name="Story_Card" parent="Card Manager" instance=ExtResource("1_jjgbg")]
-position = Vector2(111, 234)
+position = Vector2(431, 288)
 
 [node name="Story_Card4" parent="Card Manager" instance=ExtResource("1_jjgbg")]
-position = Vector2(569, 203)
+position = Vector2(184, 271)
 
 [node name="Story_Card2" parent="Card Manager" instance=ExtResource("1_jjgbg")]
-position = Vector2(245, 165)
+position = Vector2(447, 76)
 
-[node name="RichTextLabel" parent="Card Manager/Story_Card2/PanelContainer/MarginContainer/VBoxContainer" index="0"]
-text = "Two
-Lines"
+[node name="CardHeader" parent="Card Manager/Story_Card2/PanelContainer/MarginContainer/VBoxContainer" index="0"]
+text = "test"
 
 [node name="Story_Card3" parent="Card Manager" instance=ExtResource("1_jjgbg")]
-position = Vector2(422, 161)
+position = Vector2(335, 510)
 
-[node name="RichTextLabel" parent="Card Manager/Story_Card3/PanelContainer/MarginContainer/VBoxContainer" index="0"]
-text = "Three
-Lines
-of Text"
+[node name="CardHeader" parent="Card Manager/Story_Card3/PanelContainer/MarginContainer/VBoxContainer" index="0"]
+text = "user interface"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="EventText" type="PanelContainer" parent="CanvasLayer"]
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -510.0
-offset_top = 24.0
-offset_right = -105.0
-offset_bottom = -26.0
-grow_horizontal = 0
-grow_vertical = 2
-theme = ExtResource("3_8gbba")
-script = ExtResource("4_kry3j")
+[node name="EventTextController" parent="CanvasLayer" instance=ExtResource("3_8gbba")]
+offset_left = -252.0
+offset_right = -252.0
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/EventText"]
-layout_mode = 2
-theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 35
-theme_override_constants/margin_right = 15
-theme_override_constants/margin_bottom = 25
+[node name="Header" parent="CanvasLayer/EventTextController/EventText/MarginContainer/VBoxContainer" index="0"]
+text = "Reading Area"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/EventText/MarginContainer"]
-layout_mode = 2
+[node name="Text" parent="CanvasLayer/EventTextController/EventText/MarginContainer/VBoxContainer" index="2"]
+text = "Left click and drag to move cards. Right click to display text in this box. Read to understand when everything happened and arrange the cards in chronological order at the bottom, creating a correct timeline of events. Press the validate button when you are done with all the cards on the table. 
 
-[node name="Header" type="RichTextLabel" parent="CanvasLayer/EventText/MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-size_flags_stretch_ratio = 2.0
-theme_override_font_sizes/normal_font_size = 32
-text = "Lorem Ipsum"
-scroll_active = false
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="spacer" type="Control" parent="CanvasLayer/EventText/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 35)
-layout_mode = 2
-
-[node name="Text" type="RichTextLabel" parent="CanvasLayer/EventText/MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-size_flags_stretch_ratio = 20.0
-theme_override_fonts/normal_font = ExtResource("4_jjvhh")
-theme_override_font_sizes/normal_font_size = 16
-text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.d
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-fit_content = true
-scroll_active = false
-horizontal_alignment = 3
+fit_content = false
+
+[node name="AnimationController" type="Node" parent="."]
+script = ExtResource("4_jjvhh")
 
 [editable path="Card Manager/Story_Card2"]
 [editable path="Card Manager/Story_Card3"]
+[editable path="CanvasLayer/EventTextController"]
