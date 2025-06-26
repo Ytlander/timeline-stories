@@ -1,12 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://da3vfbn325gkk"]
+[gd_scene load_steps=7 format=3 uid="uid://da3vfbn325gkk"]
 
 [ext_resource type="Script" uid="uid://bfgpq3obygaei" path="res://Scripts/story_card.gd" id="1_cxbvt"]
 [ext_resource type="Theme" uid="uid://gtweqjsmt5k" path="res://default_ui_theme.tres" id="2_8h8ol"]
-[ext_resource type="Texture2D" uid="uid://fplbe2l36ohx" path="res://Assets/Sprites/triangle_icon_ph.png" id="3_lev7e"]
+[ext_resource type="Texture2D" uid="uid://d14eog7ypgap1" path="res://Assets/Sprites/Icons.png" id="3_8h8ol"]
 [ext_resource type="Texture2D" uid="uid://kd7p8hou1dcu" path="res://Assets/Sprites/selected.png" id="4_8h8ol"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jjvhh"]
 size = Vector2(126, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lev7e"]
+atlas = ExtResource("3_8h8ol")
+region = Rect2(1000, 400, 200, 200)
 
 [node name="Story_Card" type="Area2D" groups=["story_card"]]
 script = ExtResource("1_cxbvt")
@@ -61,7 +65,7 @@ custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 2
-texture = ExtResource("3_lev7e")
+texture = SubResource("AtlasTexture_lev7e")
 expand_mode = 1
 stretch_mode = 5
 

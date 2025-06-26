@@ -1,9 +1,22 @@
-[gd_scene load_steps=5 format=3 uid="uid://d4llv7opqcv4p"]
+[gd_scene load_steps=9 format=3 uid="uid://d4llv7opqcv4p"]
 
 [ext_resource type="PackedScene" uid="uid://da3vfbn325gkk" path="res://Scenes/story_card.tscn" id="1_jjgbg"]
 [ext_resource type="Script" uid="uid://cxkgkg0ts864s" path="res://Scripts/card_manager.gd" id="2_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://ddyng28usspt6" path="res://Scenes/event_text_controller.tscn" id="3_8gbba"]
+[ext_resource type="Texture2D" uid="uid://d14eog7ypgap1" path="res://Assets/Sprites/Icons.png" id="3_kry3j"]
 [ext_resource type="Script" uid="uid://bxsr1lvutq7ve" path="res://Scripts/animation_controller.gd" id="4_jjvhh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6bp64"]
+atlas = ExtResource("3_kry3j")
+region = Rect2(200, 1200, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kry3j"]
+atlas = ExtResource("3_kry3j")
+region = Rect2(1000, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_21xkr"]
+atlas = ExtResource("3_kry3j")
+region = Rect2(0, 400, 200, 200)
 
 [node name="Main" type="Node2D"]
 
@@ -13,14 +26,23 @@ script = ExtResource("2_bo1nx")
 [node name="Story_Card" parent="Card Manager" instance=ExtResource("1_jjgbg")]
 position = Vector2(431, 288)
 
+[node name="TextureRect" parent="Card Manager/Story_Card/PanelContainer/MarginContainer/VBoxContainer" index="2"]
+texture = SubResource("AtlasTexture_6bp64")
+
 [node name="Story_Card4" parent="Card Manager" instance=ExtResource("1_jjgbg")]
 position = Vector2(184, 271)
+
+[node name="TextureRect" parent="Card Manager/Story_Card4/PanelContainer/MarginContainer/VBoxContainer" index="2"]
+texture = SubResource("AtlasTexture_kry3j")
 
 [node name="Story_Card2" parent="Card Manager" instance=ExtResource("1_jjgbg")]
 position = Vector2(447, 76)
 
 [node name="CardHeader" parent="Card Manager/Story_Card2/PanelContainer/MarginContainer/VBoxContainer" index="0"]
 text = "test"
+
+[node name="TextureRect" parent="Card Manager/Story_Card2/PanelContainer/MarginContainer/VBoxContainer" index="2"]
+texture = SubResource("AtlasTexture_21xkr")
 
 [node name="Story_Card3" parent="Card Manager" instance=ExtResource("1_jjgbg")]
 position = Vector2(335, 510)
@@ -46,6 +68,8 @@ fit_content = false
 [node name="AnimationController" type="Node" parent="."]
 script = ExtResource("4_jjvhh")
 
+[editable path="Card Manager/Story_Card"]
+[editable path="Card Manager/Story_Card4"]
 [editable path="Card Manager/Story_Card2"]
 [editable path="Card Manager/Story_Card3"]
 [editable path="CanvasLayer/EventTextController"]
