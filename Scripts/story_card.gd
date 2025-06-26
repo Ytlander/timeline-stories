@@ -4,6 +4,11 @@ class_name Card
 @onready var card_header = $PanelContainer/MarginContainer/VBoxContainer/CardHeader
 @onready var selected_sprite = $SelectedSprite
 
+##A multiline export variable allows for a editable textbox where simple formatting can be made
+##like line breaks for example. So for text to be shown in the textbox, the export variable needs
+##to have text
+@export_multiline var body: String = "No text for this card yet, edit the export variable"
+
 func _ready():
 	selected_sprite.visible = false
 

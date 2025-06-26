@@ -17,5 +17,5 @@ Label/fonts/font = ExtResource("1_6kd74")
 PanelContainer/styles/panel = SubResource("StyleBoxTexture_75vm5")
 RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
 RichTextLabel/font_sizes/bold_font_size = 16
-RichTextLabel/font_sizes/normal_font_size = 24
+RichTextLabel/font_sizes/normal_font_size = 16
 RichTextLabel/fonts/normal_font = ExtResource("1_6kd74")
