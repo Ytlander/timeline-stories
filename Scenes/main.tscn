@@ -59,7 +59,7 @@ body = "Matthew
 
 I was so close but I didn’t have time synthesize the cure. The instructions are all here. Please help me finish the work. I have locked myself in the bathroom and Maria is in the supply closet. Don’t let them kill us, the cure can save us all.
 
-Your friend and collegue
+[left]Your friend and colleague[/left]
 Peter"
 
 [node name="CardHeader" parent="Card Manager/Story_Card2/PanelContainer/MarginContainer/VBoxContainer" index="0"]
