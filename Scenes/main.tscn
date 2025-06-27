@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://d4llv7opqcv4p"]
+[gd_scene load_steps=10 format=3 uid="uid://d4llv7opqcv4p"]
 
-[ext_resource type="PackedScene" uid="uid://da3vfbn325gkk" path="res://Scenes/story_card.tscn" id="1_jjgbg"]
+[ext_resource type="PackedScene" uid="uid://da3vfbn325gkk" path="res://Scenes/StoryCards/story_card_template.tscn" id="1_jjgbg"]
 [ext_resource type="Script" uid="uid://cxkgkg0ts864s" path="res://Scripts/card_manager.gd" id="2_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://ddyng28usspt6" path="res://Scenes/event_text_controller.tscn" id="3_8gbba"]
 [ext_resource type="Texture2D" uid="uid://d14eog7ypgap1" path="res://Assets/Sprites/Icons.png" id="3_kry3j"]
 [ext_resource type="Script" uid="uid://bxsr1lvutq7ve" path="res://Scripts/animation_controller.gd" id="4_jjvhh"]
+[ext_resource type="PackedScene" uid="uid://u11kmbwow0mk" path="res://Scenes/StoryCards/love_and_science.tscn" id="6_21xkr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6bp64"]
 atlas = ExtResource("3_kry3j")
@@ -25,30 +26,57 @@ script = ExtResource("2_bo1nx")
 
 [node name="Story_Card" parent="Card Manager" instance=ExtResource("1_jjgbg")]
 position = Vector2(431, 288)
+body = "Matthew was running back to the surveillance room, head spinning, Sarah wasn’t wrong. A female zombie could birth a slug, and a slug could mean the end of the whole facility, but not finding the cure would mean the end of the whole world. 
+
+He got into the room, closed it and locked it and was looking at the camera. What are you up to old friend, he looked as Peter was working at his counter. Suddenly he stopped and collapsed on a chair. Peter looked distraught, like the air going out of a balloon. 
+
+What had happened in there? Matthew took manual control of the camera and zoomed in on his colleague and close friend. He could see him breathe heavily, eyes at the floor with tears and sweat trickling down his face. Then he suddenly looked up, realising something, and he locked eyes with Matthew through the camera. 
+
+Matthew knew that Peter understood that it was him watching, that he would be more interested in what was going on in there than outside with Sarah and the other guards. He then ran over to another table, scribbled on a piece of paper that he then held up towards the camera “I need medical alchohol, Saiprotine and a bunsen burner, fast!”"
+
+[node name="CardHeader" parent="Card Manager/Story_Card/PanelContainer/MarginContainer/VBoxContainer" index="0"]
+text = "Matthew Watching"
 
 [node name="TextureRect" parent="Card Manager/Story_Card/PanelContainer/MarginContainer/VBoxContainer" index="2"]
 texture = SubResource("AtlasTexture_6bp64")
 
 [node name="Story_Card4" parent="Card Manager" instance=ExtResource("1_jjgbg")]
 position = Vector2(184, 271)
+body = "Matthew ran through the facility once again. Now headed for another supply closet where they stored medicine of different kinds. After rummaging through the contents of the shelves with a feverish intensity he found what he was looking for: a tranquilizer. 
+
+He grabbed a flask and concocted a sleeping draught within it, masking the tranquilizers taste with some alcohol and lemon juice – Sarahs favorite cocktail was the Gold Rush and although this was just a weak imitation maybe it would be enough for her to drink. 
+
+He ran back to the lab where he heard crashing sound after crashing sound of the battering ram smashing against the doors.  "
+
+[node name="CardHeader" parent="Card Manager/Story_Card4/PanelContainer/MarginContainer/VBoxContainer" index="0"]
+text = "Planning Betrayal"
 
 [node name="TextureRect" parent="Card Manager/Story_Card4/PanelContainer/MarginContainer/VBoxContainer" index="2"]
 texture = SubResource("AtlasTexture_kry3j")
 
 [node name="Story_Card2" parent="Card Manager" instance=ExtResource("1_jjgbg")]
 position = Vector2(447, 76)
+body = "Matthew
+
+I was so close but I didn’t have time synthesize the cure. The instructions are all here. Please help me finish the work. I have locked myself in the bathroom and Maria is in the supply closet. Don’t let them kill us, the cure can save us all.
+
+[left]Your friend and colleague[/left]
+Peter"
 
 [node name="CardHeader" parent="Card Manager/Story_Card2/PanelContainer/MarginContainer/VBoxContainer" index="0"]
-text = "test"
+text = "The Note"
 
 [node name="TextureRect" parent="Card Manager/Story_Card2/PanelContainer/MarginContainer/VBoxContainer" index="2"]
 texture = SubResource("AtlasTexture_21xkr")
 
 [node name="Story_Card3" parent="Card Manager" instance=ExtResource("1_jjgbg")]
 position = Vector2(335, 510)
+body = "Peter was working at his station as Maria came up behind him, putting her arms around him, laying her cheek flat against his upper back. She reached up and kissed him on the neck and a familiar tingling spread up his head and nestled in the roots of his hair. “I love you” he said and she murmured the same back to him. 
+
+Then he felt a sudden jolt of pain as Maria sunk her teeth into his neck. Instinctively he thrust his elbow back, pushing her off of him but he felt the skin rip and as he turned around a flap of flesh hung from her gritted teeth. He grabbed his labcoat just to have something to shield himself with and she lunged for him with animalistic ferocity. She had turned, how the hell had she turned!?"
 
 [node name="CardHeader" parent="Card Manager/Story_Card3/PanelContainer/MarginContainer/VBoxContainer" index="0"]
-text = "user interface"
+text = "The Bite"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -58,15 +86,13 @@ offset_right = -252.0
 
 [node name="Header" parent="CanvasLayer/EventTextController/EventText/MarginContainer/VBoxContainer" index="0"]
 text = "Reading Area"
-
-[node name="Text" parent="CanvasLayer/EventTextController/EventText/MarginContainer/VBoxContainer" index="2"]
-text = "Left click and drag to move cards. Right click to display text in this box. Read to understand when everything happened and arrange the cards in chronological order at the bottom, creating a correct timeline of events. Press the validate button when you are done with all the cards on the table. 
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-fit_content = false
+fit_content = true
 
 [node name="AnimationController" type="Node" parent="."]
 script = ExtResource("4_jjvhh")
+
+[node name="Story_Card" parent="." instance=ExtResource("6_21xkr")]
+position = Vector2(552, 499)
 
 [editable path="Card Manager/Story_Card"]
 [editable path="Card Manager/Story_Card4"]
