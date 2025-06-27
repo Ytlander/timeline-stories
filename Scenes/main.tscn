@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://d4llv7opqcv4p"]
+[gd_scene load_steps=10 format=3 uid="uid://d4llv7opqcv4p"]
 
-[ext_resource type="PackedScene" uid="uid://da3vfbn325gkk" path="res://Scenes/story_card.tscn" id="1_jjgbg"]
+[ext_resource type="PackedScene" uid="uid://da3vfbn325gkk" path="res://Scenes/StoryCards/story_card_template.tscn" id="1_jjgbg"]
 [ext_resource type="Script" uid="uid://cxkgkg0ts864s" path="res://Scripts/card_manager.gd" id="2_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://ddyng28usspt6" path="res://Scenes/event_text_controller.tscn" id="3_8gbba"]
 [ext_resource type="Texture2D" uid="uid://d14eog7ypgap1" path="res://Assets/Sprites/Icons.png" id="3_kry3j"]
 [ext_resource type="Script" uid="uid://bxsr1lvutq7ve" path="res://Scripts/animation_controller.gd" id="4_jjvhh"]
+[ext_resource type="PackedScene" uid="uid://u11kmbwow0mk" path="res://Scenes/StoryCards/love_and_science.tscn" id="6_21xkr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6bp64"]
 atlas = ExtResource("3_kry3j")
@@ -85,9 +86,13 @@ offset_right = -252.0
 
 [node name="Header" parent="CanvasLayer/EventTextController/EventText/MarginContainer/VBoxContainer" index="0"]
 text = "Reading Area"
+fit_content = true
 
 [node name="AnimationController" type="Node" parent="."]
 script = ExtResource("4_jjvhh")
+
+[node name="Story_Card" parent="." instance=ExtResource("6_21xkr")]
+position = Vector2(552, 499)
 
 [editable path="Card Manager/Story_Card"]
 [editable path="Card Manager/Story_Card4"]
