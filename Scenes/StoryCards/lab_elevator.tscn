@@ -1,20 +1,22 @@
-[gd_scene load_steps=7 format=3 uid="uid://da3vfbn325gkk"]
+[gd_scene load_steps=7 format=3 uid="uid://6bk3cflxuf7g"]
 
-[ext_resource type="Script" uid="uid://bfgpq3obygaei" path="res://Scripts/story_card.gd" id="1_cxbvt"]
-[ext_resource type="Theme" uid="uid://gtweqjsmt5k" path="res://default_ui_theme.tres" id="2_8h8ol"]
-[ext_resource type="Texture2D" uid="uid://d14eog7ypgap1" path="res://Assets/Sprites/Icons.png" id="3_8h8ol"]
-[ext_resource type="Texture2D" uid="uid://kd7p8hou1dcu" path="res://Assets/Sprites/selected.png" id="4_8h8ol"]
+[ext_resource type="Script" uid="uid://bfgpq3obygaei" path="res://Scripts/story_card.gd" id="1_3jn1p"]
+[ext_resource type="Theme" uid="uid://gtweqjsmt5k" path="res://default_ui_theme.tres" id="2_kttbx"]
+[ext_resource type="Texture2D" uid="uid://d14eog7ypgap1" path="res://Assets/Sprites/Icons.png" id="3_f3fwx"]
+[ext_resource type="Texture2D" uid="uid://kd7p8hou1dcu" path="res://Assets/Sprites/selected.png" id="4_y0yi7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jjvhh"]
 size = Vector2(126, 192)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lev7e"]
-atlas = ExtResource("3_8h8ol")
-region = Rect2(800, 0, 200, 200)
+atlas = ExtResource("3_f3fwx")
+region = Rect2(600, 400, 200, 200)
 
-[node name="StoryCard" type="Area2D" groups=["story_card"]]
-script = ExtResource("1_cxbvt")
-body = "[left]No text on this card. Edit body export variable to add text. [/left]"
+[node name="LabElevator" type="Area2D" groups=["story_card"]]
+script = ExtResource("1_3jn1p")
+body = "There was another way into the lab. It wasn't big enough for a person, but it was enough for the supplies Peter needed. The facility had labs on multiple floors and some where connected with a small elevator for quick transfer of samples. Matthew was heading toward the lab that was connected to Maria's.
+
+Inside he quickly found the medicinal alcohol and loaded it into the elevator. As he pressed the button he let out a big sigh but he couldn't relax yet. He hurried back to the guard room and as he got back to watching Peter he had already continued his work. Now Matthew just needed to win time for Peter, he still had quite a lot of it before he would also turn, and as that thought passed through his mind, he saw how the double doors bulged inward from the smashing it received from Sarahs homemade battering ram."
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_jjvhh")
@@ -32,7 +34,7 @@ offset_bottom = 102.5
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme = ExtResource("2_8h8ol")
+theme = ExtResource("2_kttbx")
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
 layout_mode = 2
@@ -52,8 +54,7 @@ layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 3.0
 mouse_filter = 2
-text = "Story Card Template
-"
+text = "Lab Elevator"
 fit_content = true
 horizontal_alignment = 1
 
@@ -79,7 +80,7 @@ mouse_filter = 2
 [node name="SelectedSprite" type="Sprite2D" parent="."]
 position = Vector2(1.19209e-06, 1.49999)
 scale = Vector2(0.71, 1.105)
-texture = ExtResource("4_8h8ol")
+texture = ExtResource("4_y0yi7")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]
