@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://d4llv7opqcv4p"]
+[gd_scene load_steps=9 format=3 uid="uid://d4llv7opqcv4p"]
 
 [ext_resource type="Script" uid="uid://cxkgkg0ts864s" path="res://Scripts/card_manager.gd" id="2_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://ddyng28usspt6" path="res://Scenes/event_text_controller.tscn" id="3_8gbba"]
@@ -7,11 +7,13 @@
 [ext_resource type="PackedScene" uid="uid://bn61qjgsu8t5t" path="res://Scenes/StoryCards/matthew_watching.tscn" id="5_344ge"]
 [ext_resource type="PackedScene" uid="uid://b5eoxyjrmjqb" path="res://Scenes/StoryCards/the_note.tscn" id="6_ynf5e"]
 [ext_resource type="PackedScene" uid="uid://cq0amfa6xlaiw" path="res://Scenes/StoryCards/zombie_outbreak.tscn" id="7_hptm8"]
+[ext_resource type="Script" uid="uid://jgiq643ahwub" path="res://Scripts/timeline_manager.gd" id="8_344ge"]
 
 [node name="Main" type="Node2D"]
 
-[node name="Card Manager" type="Node2D" parent="."]
+[node name="Card Manager" type="Node2D" parent="." node_paths=PackedStringArray("timeline_manager")]
 script = ExtResource("2_bo1nx")
+timeline_manager = NodePath("../TimelineManager")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -37,5 +39,9 @@ position = Vector2(539, 197)
 
 [node name="zombie_outbreak" parent="." instance=ExtResource("7_hptm8")]
 position = Vector2(81, 181)
+
+[node name="TimelineManager" type="Node2D" parent="."]
+script = ExtResource("8_344ge")
+slot_start_pos = Vector2(10, 400)
 
 [editable path="CanvasLayer/EventTextController"]

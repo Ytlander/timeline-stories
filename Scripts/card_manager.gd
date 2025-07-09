@@ -1,6 +1,7 @@
 extends Node2D
 
 @export var click_to_drop: bool = false
+@export var timeline_manager: Node2D = null
 
 var clicked_cards: Array
 var right_clicked_cards: Array
@@ -10,6 +11,9 @@ var lerp_speed: int = 25
 var mouse_offset: Vector2
 
 func _ready():
+	if timeline_manager == null:
+		printerr("Timelinemanager missing, assign in card manager")
+		
 	EventBus.card_clicked.connect(_on_card_clicked)
 	EventBus.card_right_clicked.connect(_on_card_right_clicked)
 
@@ -21,8 +25,12 @@ func _physics_process(delta):
 			dragged_card.global_position = lerp(dragged_card.global_position, target_position, lerp_speed * delta)
 		
 		if click_to_drop == false:
-			if Input.is_action_just_released("left_click"):
+			if Input.is_action_just_released("left_click") && dragged_card != null:
 				Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+				
+				timeline_manager.remove_card(dragged_card)
+				timeline_manager.try_place_card(dragged_card)
+				
 				dragged_card = null
 				clicked_cards.clear()
 		
