@@ -12,7 +12,7 @@ class_name Card
 # Timeline stuff
 var dragged: bool = false
 var placed: bool = false
-var timeline_slot: int
+var timeline_slot: int = -1
 
 func _ready():
 	selected_sprite.visible = false

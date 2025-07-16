@@ -6,5 +6,5 @@ signal display_text(card)
 signal close_textbox
 
 # Timeline stuff
-signal card_dragged(card)
-signal card_dropped(card)
+signal card_dragged(card: Card)
+signal card_dropped(card: Card)
