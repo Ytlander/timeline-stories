@@ -9,6 +9,11 @@ class_name Card
 ##to have text
 @export_multiline var body: String = "No text for this card yet, edit the export variable"
 
+# Timeline stuff
+var dragged: bool = false
+var placed: bool = false
+var timeline_slot: int
+
 func _ready():
 	selected_sprite.visible = false
 
