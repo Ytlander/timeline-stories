@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://idmqi5h5d8gu"]
+
+[ext_resource type="Script" uid="uid://heawgmndv41i" path="res://Scripts/timeline.gd" id="1_5kc13"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n7r13"]
+size = Vector2(600, 200)
+
+[node name="Timeline" type="Area2D"]
+collision_layer = 0
+script = ExtResource("1_5kc13")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_n7r13")
+debug_color = Color(0.766553, 0.00337064, 0.45227, 0.42)
