@@ -23,6 +23,7 @@ func _on_card_dragged(dragged_card: Card):
 func organize_cards():
 	var total_width: float = $CollisionShape2D.shape.size.x
 	var left_edge: float = global_position.x - total_width / 2
+	var offset: float = left_edge + padding + card_width / 2
 	
 	var i: int = 0
 	
@@ -30,5 +31,5 @@ func organize_cards():
 		return
 		
 	for placed_card in placed_cards:
-		placed_card.global_position = Vector2(left_edge + card_width * i + padding, global_position.y)
+		placed_card.global_position = Vector2(card_width * i + offset, global_position.y)
 		i += 1

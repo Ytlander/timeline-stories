@@ -40,6 +40,6 @@ position = Vector2(539, 197)
 position = Vector2(81, 181)
 
 [node name="Timeline" parent="." instance=ExtResource("8_344ge")]
-position = Vector2(373, 524)
+position = Vector2(307, 528)
 
 [editable path="CanvasLayer/EventTextController"]
