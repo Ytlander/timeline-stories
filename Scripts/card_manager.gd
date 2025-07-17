@@ -54,6 +54,7 @@ func _input(event):
 				dragged_card = clicked_cards[0]
 		## Getting the mouse offset so that card doesn't snap to the center
 		if dragged_card:
+			EventBus.card_dragged.emit(dragged_card)
 			var mouse_position = get_global_mouse_position()
 			mouse_offset = mouse_position - dragged_card.global_position
 	
