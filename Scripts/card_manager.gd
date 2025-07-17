@@ -23,6 +23,7 @@ func _physics_process(delta):
 		if click_to_drop == false:
 			if Input.is_action_just_released("left_click"):
 				Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+				EventBus.card_dropped.emit(dragged_card)
 				dragged_card = null
 				clicked_cards.clear()
 		
