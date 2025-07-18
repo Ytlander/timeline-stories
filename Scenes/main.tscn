@@ -24,12 +24,21 @@ offset_right = -252.0
 text = "Reading Area"
 fit_content = true
 
+[node name="Body" parent="CanvasLayer/EventTextController/EventText/MarginContainer/VBoxContainer" index="2"]
+text = "[left]Left click and hold to move cards
+
+The goal is to arrange the cards in chronological order. When all cards are in the correct place, hit the VALIDATE button
+
+Right click to open and read cards to figure out the order of events
+
+Use Q and E or scroll wheel Up/Down to scroll through the timeline if you run out of room[/left]"
+
 [node name="CheckButton" type="Button" parent="CanvasLayer"]
-offset_left = 531.0
-offset_top = 359.0
-offset_right = 636.0
-offset_bottom = 390.0
-text = "Check Order"
+offset_left = 556.0
+offset_top = 382.0
+offset_right = 661.0
+offset_bottom = 413.0
+text = "VALIDATE"
 
 [node name="AnimationController" type="Node" parent="."]
 script = ExtResource("4_jjvhh")

@@ -4,10 +4,27 @@ extends Area2D
 @export var padding: float = 20
 
 var placed_cards: Array[Card] = []
+var visible_cards: Array[int] = [0,1,2,3]
 
 func _ready() -> void:
 	EventBus.card_dropped.connect(_on_card_dropped)
 	EventBus.card_dragged.connect(_on_card_dragged)
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("scroll_left"):
+		if visible_cards[0] == 0:
+			print("Already scrolled all the way to the left")
+			return
+		for i in range(visible_cards.size()):
+			visible_cards[i] -= 1
+		organize_cards()
+	if event.is_action_pressed("scroll_right"):
+		if visible_cards.back() == placed_cards.size() + 1 or visible_cards.size() > placed_cards.size():
+			print("Already scrolled all the way to the right")
+			return
+		for i in range(visible_cards.size()):
+			visible_cards[i] += 1
+		organize_cards()
 	
 func _on_card_dropped(dropped_card: Card):
 	if dropped_card in get_overlapping_areas():
@@ -42,9 +59,13 @@ func organize_cards():
 		return
 		
 	for placed_card in placed_cards:
-		placed_card.global_position = Vector2(card_width * i + offset, global_position.y)
-		i += 1
-
+		if placed_cards.find(placed_card) not in visible_cards:
+			placed_card.visible = false
+		else:
+			placed_card.visible = true
+			placed_card.global_position = Vector2(card_width * i + offset, global_position.y)
+			i += 1
+			
 
 func _on_check_button_pressed() -> void:
 	var all_cards = get_tree().get_nodes_in_group("story_card")
