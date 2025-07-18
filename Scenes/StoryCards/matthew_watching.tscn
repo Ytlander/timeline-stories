@@ -14,11 +14,11 @@ region = Rect2(400, 800, 200, 200)
 
 [node name="MatthewWatching" type="Area2D" groups=["story_card"]]
 script = ExtResource("1_3jn1p")
-body = "Matthews head was spinning as he ran back toward the guard room, Sarah wasn't wrong, a female zombie could birth a slug and a slug could mean the end of the facility. What she didn't seem to understand was that finding a cure could save the whole world, Matthew knew how close Maria had been a breakthrough these last few days. When Matthew got inside the guard room he was sweating profusely and tore of his lab coat and hung it on one of the chairs.
+body = "Matthews head was spinning as he ran back towards the guard room. A slug could be birthed by a female zombie, sure, but Peter hadn't turned yet and protocol be damned, they couldn't just run in their with shotguns and... he couldn't bring himself to finish the thought. He felt the fabric of his shirt stick to his back and as he entered the guard room he tore of the white lab coat, throwing it on one of the chairs.
 
-He stared at the screen showing Marias lab. What was going through Peters head? What could he do to help him? All these thoughts raced through Matthews head as he watched but suddenly Peter slammed his fist on the counter and collapsed in a chair. With his head in his hands Peter was crying.
+He stared at the screen showing Maria's lab, what are you up to Peter? He was all over the place, working at a speed Matthew had never seen before. Matthew knew they were close to a breakthrough but Peter needed that breakthrough to happen now. Was there anyway he could help? As soon as Matthew had thought this he saw how Peter slammed his fist on the desk and slumped in a chair crying.
 
-Matthew couldn't tear his eyes away from Peter as his heart sank, was it all over? He zoomed in hos friend in some futile attempt to console him. At that moment Peter looked up as if he understood that someone was watching. He hurried over to another table, grabbed a pen and paper and scribbled a few words on it that he then held up to the camera. \"I'm out of medicinal alcohol, help!\""
+Was it all over, had Peter given up? He zoomed in on his mentor in some futile attempt to console him. Peter looked up, directly at the camera, had he heard the whirring of the zoom? He got up and hurried over to a table, grabbed a pen and scribbled something on a piece of paper. Peter held the paper up to the camera: \"I'm out of medicinal alcohol, help!\""
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_jjvhh")
