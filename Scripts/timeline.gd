@@ -43,3 +43,22 @@ func organize_cards():
 	for placed_card in placed_cards:
 		placed_card.global_position = Vector2(card_width * i + offset, global_position.y)
 		i += 1
+
+
+func _on_check_button_pressed() -> void:
+	var all_cards = get_tree().get_nodes_in_group("story_card")
+	for story_card in all_cards:
+		if story_card not in placed_cards:
+			print("Not all cards are placed on the timeline, try again")
+			return
+	
+	var stored_event: int = -1
+	for placed_card in placed_cards:
+		if placed_card.event_number < stored_event:
+			print("Wrong order, try again!")
+			return
+		if placed_card == placed_cards.back():
+			print("Correct, you win!")
+			return
+		if placed_card.event_number > stored_event:
+			stored_event = placed_card.event_number

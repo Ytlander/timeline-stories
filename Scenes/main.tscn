@@ -24,22 +24,35 @@ offset_right = -252.0
 text = "Reading Area"
 fit_content = true
 
+[node name="CheckButton" type="Button" parent="CanvasLayer"]
+offset_left = 531.0
+offset_top = 359.0
+offset_right = 636.0
+offset_bottom = 390.0
+text = "Check Order"
+
 [node name="AnimationController" type="Node" parent="."]
 script = ExtResource("4_jjvhh")
 
 [node name="LabElevator" parent="." instance=ExtResource("4_6bp64")]
 position = Vector2(234, 190)
+event_number = 1
 
 [node name="MatthewWatching" parent="." instance=ExtResource("5_344ge")]
 position = Vector2(389, 188)
+event_number = 2
 
 [node name="TheNote" parent="." instance=ExtResource("6_ynf5e")]
 position = Vector2(539, 197)
+event_number = 3
 
 [node name="zombie_outbreak" parent="." instance=ExtResource("7_hptm8")]
 position = Vector2(81, 181)
+event_number = 4
 
 [node name="Timeline" parent="." instance=ExtResource("8_344ge")]
 position = Vector2(307, 528)
+
+[connection signal="pressed" from="CanvasLayer/CheckButton" to="Timeline" method="_on_check_button_pressed"]
 
 [editable path="CanvasLayer/EventTextController"]

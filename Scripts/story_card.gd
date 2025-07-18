@@ -9,6 +9,8 @@ class_name Card
 ##to have text
 @export_multiline var body: String = "No text for this card yet, edit the export variable"
 
+@export var event_number: int = 0
+
 func _ready():
 	selected_sprite.visible = false
 
