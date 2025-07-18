@@ -11,6 +11,16 @@ func _ready() -> void:
 	
 func _on_card_dropped(dropped_card: Card):
 	if dropped_card in get_overlapping_areas():
+		if placed_cards.is_empty():
+			placed_cards.append(dropped_card)
+			organize_cards()
+			return
+		for placed_card in placed_cards:
+			if dropped_card.global_position.x < placed_card.global_position.x:
+				var insert_index: int = placed_cards.find(placed_card)
+				placed_cards.insert(insert_index, dropped_card)
+				organize_cards()
+				return
 		placed_cards.append(dropped_card)
 		organize_cards()
 
