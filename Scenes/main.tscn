@@ -62,6 +62,8 @@ event_number = 1
 [node name="Timeline" parent="." instance=ExtResource("8_344ge")]
 position = Vector2(340, 536)
 
+[node name="AcceptDialog" type="AcceptDialog" parent="Timeline"]
+
 [connection signal="pressed" from="CanvasLayer/CheckButton" to="Timeline" method="_on_check_button_pressed"]
 
 [editable path="CanvasLayer/EventTextController"]

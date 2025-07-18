@@ -71,16 +71,20 @@ func _on_check_button_pressed() -> void:
 	var all_cards = get_tree().get_nodes_in_group("story_card")
 	for story_card in all_cards:
 		if story_card not in placed_cards:
-			print("Not all cards are placed on the timeline, try again")
+			show_message("Not all cards are placed on the timeline, try again")
 			return
 	
 	var stored_event: int = -1
 	for placed_card in placed_cards:
 		if placed_card.event_number < stored_event:
-			print("Wrong order, try again!")
+			show_message("Wrong order, try again!")
 			return
 		if placed_card == placed_cards.back():
-			print("Correct, you win!")
+			show_message("Correct, you win!")
 			return
 		if placed_card.event_number > stored_event:
 			stored_event = placed_card.event_number
+
+func show_message(text: String):
+	$AcceptDialog.dialog_text = text
+	$AcceptDialog.popup_centered()
