@@ -14,12 +14,14 @@ region = Rect2(800, 800, 200, 200)
 
 [node name="zombie_outbreak" type="Area2D" groups=["story_card"]]
 script = ExtResource("1_apglg")
-body = "Sarah was standing in the guard room in front of the surveillance screens. She wore a spotless dark blue uniform with the guard captain insignia on the left side of her chest. What she was witnessing had her in disbelief, how could it happen, here and now? They had taken every precaution, the rangers were kept in quarantine for twenty four hours when coming back from assignments and the scientists always worked with the proper protection equipment when handling the infected rats.
+body = "Sarah was standing in the guard room in front of the surveillance screens, her guard captain insignia on the left side of her chest gleamed in the blue light from the screens and her crisp dark blue uniform stood in stark contrast to her furrowed brow. How did this happen? She had drilled the scientists to take every precaution when handling the infected rats, and Maria was the most brilliant among then, it wasn't like her to skimp on protocol. It didn't matter now, Maria had turned and she had infected Peter. They were both lost.
 
-Sarah swore under her breath and collected her racing thoughts. Even if Maria and Peter were lost to the sickness there where many that could still be saved. By her side stood her life long friend Matthew who was working in the labs together with Maria and Peter, he had stopped by the guard room to share his morning coffee with Sarah as he so often did.
+Beside Sarah stood her life long friend, Matthew. He was an assistant at the lab and worked closely with Maria and Peter. She could see a tear slowly trickling down his cheek, nestling in his short trimmed beard. He put his morning coffee down on the desk with trembling hands. \"What should we do?\" he asked and looked at Sarah.
 
-\"Nathaniel, get Rose and Theo and bring shotguns. I'll meet you outside Marias lab\". Nathaniel had the same uniform, not as perfect as Sarahs though, and he wore the standard guard insignia.
-\"Yes, ma'am!\" he answered Sarah and left the room."
+\"I'll have to go get Nathaniel and the others from our guard unit and then we'll head for Maria's lab\" she said \"I'll need to go by the armory and get the shotguns first, but really Matthew, I think you should stay here\"
+[left]\"Now way, I'm coming with you!\" Matthew said. Sarah sighed and looked at her friend, he was determined.[/left]
+[left]\"I won't stop you\" she said.[/left]
+Matthew hesitated as if to say something but didn't and with that Sarah turned around and left the room, Matthew right behind her."
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_jjvhh")

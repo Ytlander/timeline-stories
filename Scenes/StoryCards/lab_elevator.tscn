@@ -14,9 +14,11 @@ region = Rect2(600, 400, 200, 200)
 
 [node name="LabElevator" type="Area2D" groups=["story_card"]]
 script = ExtResource("1_3jn1p")
-body = "There was another way into the lab. It wasn't big enough for a person, but it was enough for the supplies Peter needed. The facility had labs on multiple floors and some where connected with a small elevator for quick transfer of samples. Matthew was heading toward the lab that was connected to Maria's.
+body = "Matthew realized that there was another way, he could not get himself into the lab but he could get Peter the supplies that he needed. The facility had labs on multiple floors and some were paired with a small elevator for sending samples between them. He ran as quickly as he could to the lab below Maria's as this one was connected by such an elevator.
 
-Inside he quickly found the medicinal alcohol and loaded it into the elevator. As he pressed the button he let out a big sigh but he couldn't relax yet. He hurried back to the guard room and as he got back to watching Peter he had already continued his work. Now Matthew just needed to win time for Peter, he still had quite a lot of it before he would also turn, and as that thought passed through his mind, he saw how the double doors bulged inward from the smashing it received from Sarahs homemade battering ram."
+Inside the lab he opened the supplies closet and scanned the shelves. On the top one he found the medicinal alcohol, standing on his toes he could just reach and grab a bottle. He loaded the elevator with it and pressed the button to send it up to Peter.
+
+Matthew hurried back to the guard room to continue watching. When he got there Peter had already continued his work, Matthew let out a small sigh of relief, but his work wasn't over yet. Now Matthew needed to win time for Peter so that he could finish the work. He glanced toward the double doors, the only entrance to the lab, and it bulged inward from the smashing it received from Sarah's home made battering ram."
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_jjvhh")
