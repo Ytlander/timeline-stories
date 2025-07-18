@@ -51,7 +51,7 @@ position = Vector2(81, 181)
 event_number = 4
 
 [node name="Timeline" parent="." instance=ExtResource("8_344ge")]
-position = Vector2(307, 528)
+position = Vector2(340, 536)
 
 [connection signal="pressed" from="CanvasLayer/CheckButton" to="Timeline" method="_on_check_button_pressed"]
 

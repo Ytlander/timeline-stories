@@ -23,12 +23,13 @@ func _on_card_dropped(dropped_card: Card):
 				return
 		placed_cards.append(dropped_card)
 		organize_cards()
+	else:
+		organize_cards()
 
 func _on_card_dragged(dragged_card: Card):
 	if dragged_card not in placed_cards:
 		return
 	placed_cards.erase(dragged_card)
-	organize_cards()
 
 func organize_cards():
 	var total_width: float = $CollisionShape2D.shape.size.x
