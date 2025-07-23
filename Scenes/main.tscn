@@ -1,5 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://d4llv7opqcv4p"]
+[gd_scene load_steps=15 format=3 uid="uid://d4llv7opqcv4p"]
 
+[ext_resource type="Texture2D" uid="uid://bhky22gvry2fn" path="res://Assets/dark-abstract-check-texture.jpg" id="1_fdnlq"]
 [ext_resource type="Script" uid="uid://cxkgkg0ts864s" path="res://Scripts/card_manager.gd" id="2_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://ddyng28usspt6" path="res://Scenes/event_text_controller.tscn" id="3_8gbba"]
 [ext_resource type="Theme" uid="uid://gtweqjsmt5k" path="res://default_ui_theme.tres" id="3_d1ilt"]
@@ -9,11 +10,12 @@
 [ext_resource type="PackedScene" uid="uid://b5eoxyjrmjqb" path="res://Scenes/StoryCards/the_note.tscn" id="6_ynf5e"]
 [ext_resource type="PackedScene" uid="uid://cq0amfa6xlaiw" path="res://Scenes/StoryCards/zombie_outbreak.tscn" id="7_hptm8"]
 [ext_resource type="PackedScene" uid="uid://idmqi5h5d8gu" path="res://Scenes/timeline.tscn" id="8_344ge"]
-[ext_resource type="Texture2D" uid="uid://dqdamrrn1a6s1" path="res://Assets/Sprites/Timeline.png" id="9_ynf5e"]
-[ext_resource type="Texture2D" uid="uid://by67almjrgj6h" path="res://Assets/Sprites/LeftSideCover.png" id="10_hptm8"]
+[ext_resource type="Texture2D" uid="uid://dn86aomram4j3" path="res://Assets/Sprites/TimelineClean.png" id="10_d1ilt"]
+[ext_resource type="Texture2D" uid="uid://c0q1pe2p237yj" path="res://Assets/Sprites/LeftSideCoverClean.png" id="11_6iyac"]
+[ext_resource type="Texture2D" uid="uid://b2d57lg08nxkw" path="res://Assets/Sprites/HourglassBlue.png" id="11_fdnlq"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ynf5e"]
-texture = ExtResource("9_ynf5e")
+texture = ExtResource("10_d1ilt")
 texture_margin_left = 5.0
 texture_margin_top = 5.0
 texture_margin_right = 5.0
@@ -21,14 +23,20 @@ texture_margin_bottom = 5.0
 
 [node name="Main" type="Node2D"]
 
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -100
+position = Vector2(486, 408)
+scale = Vector2(0.94, 0.5)
+texture = ExtResource("1_fdnlq")
+
 [node name="Card Manager" type="Node2D" parent="."]
 script = ExtResource("2_bo1nx")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="EventTextController" parent="CanvasLayer" instance=ExtResource("3_8gbba")]
-offset_left = -252.0
-offset_right = -252.0
+offset_left = -210.0
+offset_right = -210.0
 
 [node name="Header" parent="CanvasLayer/EventTextController/EventText/MarginContainer/VBoxContainer" index="0"]
 text = "Reading Area"
@@ -45,9 +53,9 @@ Use Q and E or scroll wheel Up/Down to scroll through the timeline if you run ou
 
 [node name="CheckButton" type="Button" parent="CanvasLayer"]
 offset_left = 556.0
-offset_top = 382.0
+offset_top = 392.0
 offset_right = 661.0
-offset_bottom = 413.0
+offset_bottom = 423.0
 theme = ExtResource("3_d1ilt")
 text = "VALIDATE"
 
@@ -79,28 +87,34 @@ theme = ExtResource("3_d1ilt")
 
 [node name="TimelineVisual" type="PanelContainer" parent="Timeline"]
 z_index = -25
-custom_minimum_size = Vector2(1200, 225)
+custom_minimum_size = Vector2(1240, 225)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -336.0
+offset_left = -335.0
 offset_top = -112.0
-offset_right = 904.0
+offset_right = 905.0
 offset_bottom = 113.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_ynf5e")
 
-[node name="LeftSideCover" type="Sprite2D" parent="Timeline"]
-z_index = 10
-position = Vector2(-258, 1)
-texture = ExtResource("10_hptm8")
+[node name="HourglassBlue" type="Sprite2D" parent="Timeline/TimelineVisual"]
+position = Vector2(607, 106)
+texture = ExtResource("11_fdnlq")
 
-[node name="RightSideCover" type="Sprite2D" parent="Timeline"]
+[node name="LeftSideCover" type="Sprite2D" parent="Timeline/TimelineVisual"]
 z_index = 10
-position = Vector2(826, 1)
-texture = ExtResource("10_hptm8")
+z_as_relative = false
+position = Vector2(78, 113)
+texture = ExtResource("11_6iyac")
+
+[node name="RightSideCover" type="Sprite2D" parent="Timeline/TimelineVisual"]
+z_index = 10
+z_as_relative = false
+position = Vector2(1162, 113)
+texture = ExtResource("11_6iyac")
 flip_h = true
 
 [connection signal="pressed" from="CanvasLayer/CheckButton" to="Timeline" method="_on_check_button_pressed"]

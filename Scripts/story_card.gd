@@ -10,9 +10,11 @@ class_name Card
 @export_multiline var body: String = "No text for this card yet, edit the export variable"
 
 @export var event_number: int = 0
+@export var default_z_index = 15 #Set to 15 so that it displays on top of other elements by default
 
 func _ready():
 	selected_sprite.visible = false
+	self.z_index = default_z_index
 
 ##Tells the Card Manager that the card has been clicked
 func _on_input_event(viewport, event, shape_idx):

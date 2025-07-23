@@ -5,7 +5,7 @@ extends Node2D
 var clicked_cards: Array
 var right_clicked_cards: Array
 var card_to_open: Area2D
-var dragged_card: Area2D = null
+var dragged_card: Card = null
 var lerp_speed: int = 25
 var mouse_offset: Vector2
 
@@ -40,7 +40,7 @@ func check_overlapping_cards():
 			dragged_card.z_index = overlapping_cards[0].z_index + 2
 		
 		if overlapping_cards.is_empty():
-			dragged_card.z_index = 0
+			dragged_card.z_index = dragged_card.default_z_index
 
 ## We use the input event to sort the cards so that it doesn't happen every frame like it did when I had this 
 ## logic in the physics process loop.

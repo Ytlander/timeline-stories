@@ -63,6 +63,7 @@ func organize_cards():
 			placed_card.visible = false
 		else:
 			placed_card.visible = true
+			placed_card.z_index = 0 #This places them behind the left/right covers
 			placed_card.global_position = Vector2(card_width * i + offset, global_position.y)
 			i += 1
 			
