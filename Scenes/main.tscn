@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://d4llv7opqcv4p"]
+[gd_scene load_steps=15 format=3 uid="uid://d4llv7opqcv4p"]
 
 [ext_resource type="Script" uid="uid://cxkgkg0ts864s" path="res://Scripts/card_manager.gd" id="2_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://ddyng28usspt6" path="res://Scenes/event_text_controller.tscn" id="3_8gbba"]
@@ -13,6 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://c0q1pe2p237yj" path="res://Assets/Sprites/LeftSideCoverClean.png" id="11_6iyac"]
 [ext_resource type="Texture2D" uid="uid://b2d57lg08nxkw" path="res://Assets/Sprites/HourglassBlue.png" id="11_fdnlq"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6iyac"]
+bg_color = Color(0.61, 0.467667, 0.183, 1)
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ynf5e"]
 texture = ExtResource("10_d1ilt")
 texture_margin_left = 5.0
@@ -21,6 +24,13 @@ texture_margin_right = 5.0
 texture_margin_bottom = 5.0
 
 [node name="Main" type="Node2D"]
+
+[node name="Background" type="Panel" parent="."]
+z_index = -100
+offset_right = 1293.0
+offset_bottom = 710.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_6iyac")
 
 [node name="Card Manager" type="Node2D" parent="."]
 script = ExtResource("2_bo1nx")
