@@ -1,13 +1,23 @@
-[gd_scene load_steps=9 format=3 uid="uid://d4llv7opqcv4p"]
+[gd_scene load_steps=13 format=3 uid="uid://d4llv7opqcv4p"]
 
 [ext_resource type="Script" uid="uid://cxkgkg0ts864s" path="res://Scripts/card_manager.gd" id="2_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://ddyng28usspt6" path="res://Scenes/event_text_controller.tscn" id="3_8gbba"]
+[ext_resource type="Theme" uid="uid://gtweqjsmt5k" path="res://default_ui_theme.tres" id="3_d1ilt"]
 [ext_resource type="PackedScene" uid="uid://6bk3cflxuf7g" path="res://Scenes/StoryCards/lab_elevator.tscn" id="4_6bp64"]
 [ext_resource type="Script" uid="uid://bxsr1lvutq7ve" path="res://Scripts/animation_controller.gd" id="4_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://bn61qjgsu8t5t" path="res://Scenes/StoryCards/matthew_watching.tscn" id="5_344ge"]
 [ext_resource type="PackedScene" uid="uid://b5eoxyjrmjqb" path="res://Scenes/StoryCards/the_note.tscn" id="6_ynf5e"]
 [ext_resource type="PackedScene" uid="uid://cq0amfa6xlaiw" path="res://Scenes/StoryCards/zombie_outbreak.tscn" id="7_hptm8"]
 [ext_resource type="PackedScene" uid="uid://idmqi5h5d8gu" path="res://Scenes/timeline.tscn" id="8_344ge"]
+[ext_resource type="Texture2D" uid="uid://dqdamrrn1a6s1" path="res://Assets/Sprites/Timeline.png" id="9_ynf5e"]
+[ext_resource type="Texture2D" uid="uid://by67almjrgj6h" path="res://Assets/Sprites/LeftSideCover.png" id="10_hptm8"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ynf5e"]
+texture = ExtResource("9_ynf5e")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
 
 [node name="Main" type="Node2D"]
 
@@ -38,6 +48,7 @@ offset_left = 556.0
 offset_top = 382.0
 offset_right = 661.0
 offset_bottom = 413.0
+theme = ExtResource("3_d1ilt")
 text = "VALIDATE"
 
 [node name="AnimationController" type="Node" parent="."]
@@ -63,6 +74,34 @@ event_number = 1
 position = Vector2(340, 536)
 
 [node name="AcceptDialog" type="AcceptDialog" parent="Timeline"]
+position = Vector2i(0, 36)
+theme = ExtResource("3_d1ilt")
+
+[node name="TimelineVisual" type="PanelContainer" parent="Timeline"]
+z_index = -25
+custom_minimum_size = Vector2(1200, 225)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -336.0
+offset_top = -112.0
+offset_right = 904.0
+offset_bottom = 113.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ynf5e")
+
+[node name="LeftSideCover" type="Sprite2D" parent="Timeline"]
+z_index = 10
+position = Vector2(-258, 1)
+texture = ExtResource("10_hptm8")
+
+[node name="RightSideCover" type="Sprite2D" parent="Timeline"]
+z_index = 10
+position = Vector2(826, 1)
+texture = ExtResource("10_hptm8")
+flip_h = true
 
 [connection signal="pressed" from="CanvasLayer/CheckButton" to="Timeline" method="_on_check_button_pressed"]
 

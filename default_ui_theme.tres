@@ -1,7 +1,25 @@
-[gd_resource type="Theme" load_steps=4 format=3 uid="uid://gtweqjsmt5k"]
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://gtweqjsmt5k"]
 
-[ext_resource type="FontFile" uid="uid://ndnqmg54m45n" path="res://Assets/Fonts/AlbertTextBold.otf" id="1_6kd74"]
+[ext_resource type="Texture2D" uid="uid://c22k05jfqsvrj" path="res://Assets/Sprites/ValidateButtonStyle.png" id="1_75vm5"]
+[ext_resource type="Texture2D" uid="uid://db0eymsq0oajp" path="res://Assets/Sprites/ValidateButtonHover.png" id="1_emmwt"]
+[ext_resource type="FontFile" uid="uid://bs6e86ipf2724" path="res://Assets/Fonts/PlayfairDisplay-Bold.ttf" id="1_tw8vk"]
 [ext_resource type="Texture2D" uid="uid://e3cvta4k1buh" path="res://Assets/Sprites/Border-thin.png" id="2_47fwc"]
+[ext_resource type="FontFile" uid="uid://bk45soa0k4vp7" path="res://Assets/Fonts/PlayfairDisplay-Regular.ttf" id="3_s1ijh"]
+[ext_resource type="FontFile" uid="uid://cc7vnqas1gsuj" path="res://Assets/Fonts/PlayfairDisplay-Black.ttf" id="5_s1ijh"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s1ijh"]
+texture = ExtResource("1_emmwt")
+texture_margin_left = 3.0
+texture_margin_top = 3.0
+texture_margin_right = 3.0
+texture_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_emmwt"]
+texture = ExtResource("1_75vm5")
+texture_margin_left = 3.0
+texture_margin_top = 3.0
+texture_margin_right = 3.0
+texture_margin_bottom = 3.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_75vm5"]
 texture = ExtResource("2_47fwc")
@@ -11,11 +29,14 @@ texture_margin_right = 5.0
 texture_margin_bottom = 5.0
 
 [resource]
+Button/fonts/font = ExtResource("1_tw8vk")
+Button/styles/hover = SubResource("StyleBoxTexture_s1ijh")
+Button/styles/normal = SubResource("StyleBoxTexture_emmwt")
 Label/colors/font_color = Color(0, 0, 0, 1)
 Label/font_sizes/font_size = 20
-Label/fonts/font = ExtResource("1_6kd74")
+Label/fonts/font = ExtResource("3_s1ijh")
 PanelContainer/styles/panel = SubResource("StyleBoxTexture_75vm5")
 RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
 RichTextLabel/font_sizes/bold_font_size = 16
 RichTextLabel/font_sizes/normal_font_size = 16
-RichTextLabel/fonts/normal_font = ExtResource("1_6kd74")
+RichTextLabel/fonts/normal_font = ExtResource("5_s1ijh")
