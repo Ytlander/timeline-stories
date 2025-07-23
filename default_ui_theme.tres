@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=11 format=3 uid="uid://gtweqjsmt5k"]
+[gd_resource type="Theme" load_steps=12 format=3 uid="uid://gtweqjsmt5k"]
 
 [ext_resource type="Texture2D" uid="uid://c22k05jfqsvrj" path="res://Assets/Sprites/ValidateButtonStyle.png" id="1_75vm5"]
 [ext_resource type="Texture2D" uid="uid://db0eymsq0oajp" path="res://Assets/Sprites/ValidateButtonHover.png" id="1_emmwt"]
@@ -23,6 +23,13 @@ texture_margin_top = 3.0
 texture_margin_right = 3.0
 texture_margin_bottom = 3.0
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tw8vk"]
+texture = ExtResource("1_75vm5")
+texture_margin_left = 3.0
+texture_margin_top = 3.0
+texture_margin_right = 3.0
+texture_margin_bottom = 3.0
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_75vm5"]
 texture = ExtResource("2_47fwc")
 texture_margin_left = 5.0
@@ -35,6 +42,7 @@ Button/fonts/font = ExtResource("1_tw8vk")
 Button/styles/focus = SubResource("StyleBoxEmpty_tw8vk")
 Button/styles/hover = SubResource("StyleBoxTexture_s1ijh")
 Button/styles/normal = SubResource("StyleBoxTexture_emmwt")
+Button/styles/pressed = SubResource("StyleBoxTexture_tw8vk")
 Label/colors/font_color = Color(0, 0, 0, 1)
 Label/font_sizes/font_size = 20
 Label/fonts/font = ExtResource("3_s1ijh")

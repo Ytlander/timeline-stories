@@ -19,7 +19,7 @@ body = "Matthew
 I was so close but I didn’t have time to synthesize the cure. The instructions are all here. Please help me finish the work. I have locked myself in the bathroom and Maria is in the supply closet. Don’t let them kill us, the cure can save us all.
 
 
-[left]Your friend and collegue[/left]
+[left]Your friend and colleague[/left]
 Peter"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

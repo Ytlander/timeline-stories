@@ -19,9 +19,9 @@ body = "Sarah was standing in the guard room in front of the surveillance screen
 Beside Sarah stood her life long friend, Matthew. He was an assistant at the lab and worked closely with Maria and Peter. She could see a tear slowly trickling down his cheek, nestling in his short trimmed beard. He put his morning coffee down on the desk with trembling hands. \"What should we do?\" he asked and looked at Sarah.
 
 \"I'll have to go get Nathaniel and the others from our guard unit and then we'll head for Maria's lab\" she said \"I'll need to go by the armory and get the shotguns first, but really Matthew, I think you should stay here\"
-[left]\"Now way, I'm coming with you!\" Matthew said. Sarah sighed and looked at her friend, he was determined.[/left]
+[left]\"No way, I'm coming with you!\" Matthew said. Sarah sighed and looked at her friend, he was determined.[/left]
 [left]\"I won't stop you\" she said.[/left]
-Matthew hesitated as if to say something but didn't and with that Sarah turned around and left the room, Matthew right behind her."
+Matthew hesitated as if to say something more but didn't and with that Sarah turned around and left the room, with Matthew right behind her."
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_jjvhh")

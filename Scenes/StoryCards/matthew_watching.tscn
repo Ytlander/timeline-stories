@@ -14,7 +14,7 @@ region = Rect2(400, 800, 200, 200)
 
 [node name="MatthewWatching" type="Area2D" groups=["story_card"]]
 script = ExtResource("1_3jn1p")
-body = "Matthews head was spinning as he ran back towards the guard room. A slug could be birthed by a female zombie, sure, but Peter hadn't turned yet and protocol be damned, they couldn't just run in their with shotguns and... he couldn't bring himself to finish the thought. He felt the fabric of his shirt stick to his back and as he entered the guard room he tore of the white lab coat, throwing it on one of the chairs.
+body = "Matthews head was spinning as he ran back towards the guard room. A slug could be birthed by a female zombie, sure, but Peter hadn't turned yet and protocol be damned, they couldn't just run in there with shotguns and... he couldn't bring himself to finish the thought. He felt the fabric of his shirt stick to his back and as he entered the guard room he tore off the white lab coat, throwing it on one of the chairs.
 
 He stared at the screen showing Maria's lab, what are you up to Peter? He was all over the place, working at a speed Matthew had never seen before. Matthew knew they were close to a breakthrough but Peter needed that breakthrough to happen now. Was there anyway he could help? As soon as Matthew had thought this he saw how Peter slammed his fist on the desk and slumped in a chair crying.
 
