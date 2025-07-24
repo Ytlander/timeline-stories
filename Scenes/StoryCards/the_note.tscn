@@ -21,6 +21,7 @@ I was so close but I didn’t have time to synthesize the cure. The instructions
 
 [left]Your friend and colleague[/left]
 Peter"
+event_number = 18
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_jjvhh")

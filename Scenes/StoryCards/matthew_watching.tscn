@@ -19,6 +19,7 @@ body = "Matthews head was spinning as he ran back towards the guard room. A slug
 He stared at the screen showing Maria's lab, what are you up to Peter? He was all over the place, working at a speed Matthew had never seen before. Matthew knew they were close to a breakthrough but Peter needed that breakthrough to happen now. Was there anyway he could help? As soon as Matthew had thought this he saw how Peter slammed his fist on the desk and slumped in a chair crying.
 
 Was it all over, had Peter given up? He zoomed in on his mentor in some futile attempt to console him. Peter looked up, directly at the camera, had he heard the whirring of the zoom? He got up and hurried over to a table, grabbed a pen and scribbled something on a piece of paper. Peter held the paper up to the camera: \"I'm out of medicinal alcohol, help!\""
+event_number = 9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_jjvhh")
