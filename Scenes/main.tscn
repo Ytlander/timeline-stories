@@ -1,6 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://d4llv7opqcv4p"]
+[gd_scene load_steps=16 format=3 uid="uid://d4llv7opqcv4p"]
 
 [ext_resource type="Script" uid="uid://cxkgkg0ts864s" path="res://Scripts/card_manager.gd" id="2_bo1nx"]
+[ext_resource type="Script" uid="uid://1rwkskq6tj2n" path="res://Scripts/spawner.gd" id="2_fdnlq"]
 [ext_resource type="PackedScene" uid="uid://ddyng28usspt6" path="res://Scenes/event_text_controller.tscn" id="3_8gbba"]
 [ext_resource type="Theme" uid="uid://gtweqjsmt5k" path="res://default_ui_theme.tres" id="3_d1ilt"]
 [ext_resource type="PackedScene" uid="uid://6bk3cflxuf7g" path="res://Scenes/StoryCards/lab_elevator.tscn" id="4_6bp64"]
@@ -34,6 +35,22 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_6iyac")
 
 [node name="Card Manager" type="Node2D" parent="."]
 script = ExtResource("2_bo1nx")
+
+[node name="Spawner" type="Node2D" parent="."]
+script = ExtResource("2_fdnlq")
+batch_1 = Array[PackedScene]([ExtResource("7_hptm8"), ExtResource("5_344ge"), ExtResource("4_6bp64"), ExtResource("6_ynf5e")])
+
+[node name="SpawnPosition" type="Node2D" parent="Spawner"]
+position = Vector2(87, 172)
+
+[node name="SpawnPosition2" type="Node2D" parent="Spawner"]
+position = Vector2(235, 170)
+
+[node name="SpawnPosition3" type="Node2D" parent="Spawner"]
+position = Vector2(407, 182)
+
+[node name="SpawnPosition4" type="Node2D" parent="Spawner"]
+position = Vector2(541, 190)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
