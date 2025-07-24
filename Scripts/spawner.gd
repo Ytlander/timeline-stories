@@ -25,11 +25,11 @@ func _ready():
 	spawn_position_array = [spawn_position, spawn_position_2, spawn_position_3, spawn_position_4]
 	
 func _on_validate_successful(batch_to_spawn):
-	var current_batch = batch_array[batch_to_spawn - 1]
+	var current_batch = batch_array[batch_to_spawn]
+	var card_number = 0
 	for packed_card in current_batch:
-		var card_number = 0
 		var card = packed_card.instantiate()
 		self.add_child(card)
-		print(spawn_position_array)
+		print(spawn_position_array[card_number])
 		card.global_position = spawn_position_array[card_number].global_position
 		card_number += 1
