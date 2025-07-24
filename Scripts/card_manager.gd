@@ -4,7 +4,8 @@ extends Node2D
 
 var clicked_cards: Array
 var right_clicked_cards: Array
-var card_to_open: Area2D
+var card_to_open: Card
+var selected_card: Card
 var dragged_card: Card = null
 var lerp_speed: int = 25
 var mouse_offset: Vector2
@@ -12,6 +13,7 @@ var mouse_offset: Vector2
 func _ready():
 	EventBus.card_clicked.connect(_on_card_clicked)
 	EventBus.card_right_clicked.connect(_on_card_right_clicked)
+	EventBus.validate_successful.connect(_on_validate_successful)
 
 func _physics_process(delta):
 		if dragged_card != null:
@@ -71,6 +73,7 @@ func _input(event):
 		if card_to_open:
 			EventBus.display_text.emit(card_to_open)
 			right_clicked_cards.clear()
+			selected_card = card_to_open
 			card_to_open = null
 
 
@@ -87,3 +90,7 @@ func _on_card_clicked(card):
 func _on_card_right_clicked(card):
 	if dragged_card == null:
 		right_clicked_cards.append(card)
+
+func _on_validate_successful(_batch_number):
+	if selected_card:
+		selected_card.selected_sprite.visible = false

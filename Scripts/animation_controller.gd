@@ -1,3 +1,6 @@
+##I don't know if there is any point to this script, 
+##maybe this logic should just be on the card_manager instead?
+
 extends Node
 
 var previous_card
