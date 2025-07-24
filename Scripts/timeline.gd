@@ -6,6 +6,8 @@ extends Area2D
 var placed_cards: Array[Card] = []
 var visible_cards: Array[int] = [0,1,2,3]
 
+var card_batch: int = 1
+
 func _ready() -> void:
 	EventBus.card_dropped.connect(_on_card_dropped)
 	EventBus.card_dragged.connect(_on_card_dragged)
@@ -82,6 +84,8 @@ func _on_check_button_pressed() -> void:
 			return
 		if placed_card == placed_cards.back():
 			show_message("Good job, you placed the cards in the correct order!", "Success")
+			EventBus.validate_successful.emit(card_batch)
+			card_batch += 1
 			return
 		if placed_card.event_number > stored_event:
 			stored_event = placed_card.event_number
