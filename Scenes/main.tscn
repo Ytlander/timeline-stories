@@ -144,7 +144,6 @@ position = Vector2(607, 106)
 texture = ExtResource("11_fdnlq")
 
 [node name="LeftSideCover" type="Sprite2D" parent="Timeline/TimelineVisual"]
-visible = false
 z_index = 10
 z_as_relative = false
 position = Vector2(78, 113)
