@@ -65,16 +65,17 @@ func organize_cards(dir: String = "none"):
 			placed_card.visible = false
 		else:
 			var target_pos = Vector2(card_width * i + offset, global_position.y)
-			var tween = create_tween()
 			placed_card.visible = true
 			placed_card.z_index = 0 #This places them behind the left/right covers
 			match dir:
 				"none":
 					placed_card.global_position = target_pos
 				"left":
+					var tween = create_tween()
 					placed_card.global_position = Vector2(card_width * (i - 1) + offset, global_position.y)
 					tween.tween_property(placed_card, "global_position", target_pos, 0.5)
 				"right":
+					var tween = create_tween()
 					placed_card.global_position = Vector2(card_width * (i + 1) + offset, global_position.y)
 					tween.tween_property(placed_card, "global_position", target_pos, 0.5)
 			i += 1
