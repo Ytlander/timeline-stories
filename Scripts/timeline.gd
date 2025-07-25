@@ -60,6 +60,13 @@ func organize_cards(dir: String = "none"):
 	if placed_cards.is_empty():
 		return
 		
+	if placed_cards.size() < 4:
+		for placed_card in placed_cards:
+			var target_pos = Vector2(card_width * (i + 1) + offset, global_position.y)
+			placed_card.global_position = target_pos
+			i += 1
+		return
+		
 	for placed_card in placed_cards:
 		if placed_cards.find(placed_card) not in visible_cards:
 			placed_card.visible = false
