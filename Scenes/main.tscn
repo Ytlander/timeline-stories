@@ -1,18 +1,25 @@
-[gd_scene load_steps=16 format=3 uid="uid://d4llv7opqcv4p"]
+[gd_scene load_steps=23 format=3 uid="uid://d4llv7opqcv4p"]
 
 [ext_resource type="Script" uid="uid://cxkgkg0ts864s" path="res://Scripts/card_manager.gd" id="2_bo1nx"]
 [ext_resource type="Script" uid="uid://1rwkskq6tj2n" path="res://Scripts/spawner.gd" id="2_fdnlq"]
 [ext_resource type="PackedScene" uid="uid://ddyng28usspt6" path="res://Scenes/event_text_controller.tscn" id="3_8gbba"]
 [ext_resource type="Theme" uid="uid://gtweqjsmt5k" path="res://default_ui_theme.tres" id="3_d1ilt"]
-[ext_resource type="PackedScene" uid="uid://6bk3cflxuf7g" path="res://Scenes/StoryCards/lab_elevator.tscn" id="4_6bp64"]
+[ext_resource type="PackedScene" uid="uid://6bk3cflxuf7g" path="res://Scenes/StoryCards/Batch1/lab_elevator.tscn" id="4_6bp64"]
 [ext_resource type="Script" uid="uid://bxsr1lvutq7ve" path="res://Scripts/animation_controller.gd" id="4_jjvhh"]
-[ext_resource type="PackedScene" uid="uid://bn61qjgsu8t5t" path="res://Scenes/StoryCards/matthew_watching.tscn" id="5_344ge"]
-[ext_resource type="PackedScene" uid="uid://b5eoxyjrmjqb" path="res://Scenes/StoryCards/the_note.tscn" id="6_ynf5e"]
-[ext_resource type="PackedScene" uid="uid://cq0amfa6xlaiw" path="res://Scenes/StoryCards/zombie_outbreak.tscn" id="7_hptm8"]
+[ext_resource type="PackedScene" uid="uid://bn61qjgsu8t5t" path="res://Scenes/StoryCards/Batch1/matthew_watching.tscn" id="5_344ge"]
+[ext_resource type="PackedScene" uid="uid://b5eoxyjrmjqb" path="res://Scenes/StoryCards/Batch1/the_note.tscn" id="6_ynf5e"]
+[ext_resource type="PackedScene" uid="uid://d1ruk1rvggxaa" path="res://Scenes/StoryCards/Batch2/locked_lab.tscn" id="7_hibaj"]
+[ext_resource type="PackedScene" uid="uid://cq0amfa6xlaiw" path="res://Scenes/StoryCards/Batch1/zombie_outbreak.tscn" id="7_hptm8"]
 [ext_resource type="PackedScene" uid="uid://idmqi5h5d8gu" path="res://Scenes/timeline.tscn" id="8_344ge"]
+[ext_resource type="PackedScene" uid="uid://fhou8wg46k7k" path="res://Scenes/StoryCards/Batch2/love_and_science.tscn" id="8_pdsj5"]
+[ext_resource type="PackedScene" uid="uid://c45jewq675wyj" path="res://Scenes/StoryCards/Batch2/peace_offering.tscn" id="9_ee4r6"]
 [ext_resource type="Texture2D" uid="uid://dn86aomram4j3" path="res://Assets/Sprites/TimelineClean.png" id="10_d1ilt"]
+[ext_resource type="PackedScene" uid="uid://swsus1p5kkmn" path="res://Scenes/StoryCards/Batch3/open_sesame.tscn" id="10_gt3je"]
+[ext_resource type="PackedScene" uid="uid://bmapgr57ymd3a" path="res://Scenes/StoryCards/Batch3/straitjacket.tscn" id="11_3pmx8"]
 [ext_resource type="Texture2D" uid="uid://c0q1pe2p237yj" path="res://Assets/Sprites/LeftSideCoverClean.png" id="11_6iyac"]
 [ext_resource type="Texture2D" uid="uid://b2d57lg08nxkw" path="res://Assets/Sprites/HourglassBlue.png" id="11_fdnlq"]
+[ext_resource type="PackedScene" uid="uid://c38pdwjysuqyn" path="res://Scenes/StoryCards/Batch3/zombie_slug.tscn" id="13_u50mg"]
+[ext_resource type="PackedScene" uid="uid://c4wqb8d841rrl" path="res://Scenes/StoryCards/Batch3/the_plea.tscn" id="14_jkdf5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6iyac"]
 bg_color = Color(0.61, 0.467667, 0.183, 1)
@@ -39,6 +46,8 @@ script = ExtResource("2_bo1nx")
 [node name="Spawner" type="Node2D" parent="."]
 script = ExtResource("2_fdnlq")
 batch_1 = Array[PackedScene]([ExtResource("7_hptm8"), ExtResource("5_344ge"), ExtResource("4_6bp64"), ExtResource("6_ynf5e")])
+batch_2 = Array[PackedScene]([ExtResource("7_hibaj"), ExtResource("8_pdsj5"), ExtResource("9_ee4r6")])
+batch_3 = Array[PackedScene]([ExtResource("10_gt3je"), ExtResource("11_3pmx8"), ExtResource("14_jkdf5"), ExtResource("13_u50mg")])
 
 [node name="SpawnPosition" type="Node2D" parent="Spawner"]
 position = Vector2(87, 172)

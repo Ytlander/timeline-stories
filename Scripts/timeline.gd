@@ -6,7 +6,7 @@ extends Area2D
 var placed_cards: Array[Card] = []
 var visible_cards: Array[int] = [0,1,2,3]
 
-var card_batch: int = 0
+var card_batch: int = 1
 
 func _ready() -> void:
 	EventBus.card_dropped.connect(_on_card_dropped)

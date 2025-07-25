@@ -1,21 +1,27 @@
-[gd_scene load_steps=7 format=3 uid="uid://da3vfbn325gkk"]
+[gd_scene load_steps=7 format=3 uid="uid://fhou8wg46k7k"]
 
-[ext_resource type="Script" uid="uid://bfgpq3obygaei" path="res://Scripts/story_card.gd" id="1_cxbvt"]
-[ext_resource type="Theme" uid="uid://gtweqjsmt5k" path="res://default_ui_theme.tres" id="2_8h8ol"]
-[ext_resource type="Texture2D" uid="uid://d14eog7ypgap1" path="res://Assets/Sprites/Icons.png" id="3_8h8ol"]
-[ext_resource type="Texture2D" uid="uid://kd7p8hou1dcu" path="res://Assets/Sprites/selected.png" id="4_8h8ol"]
+[ext_resource type="Script" uid="uid://bfgpq3obygaei" path="res://Scripts/story_card.gd" id="1_y46v6"]
+[ext_resource type="Theme" uid="uid://gtweqjsmt5k" path="res://default_ui_theme.tres" id="2_cr64y"]
+[ext_resource type="Texture2D" uid="uid://d14eog7ypgap1" path="res://Assets/Sprites/Icons.png" id="3_wjwst"]
+[ext_resource type="Texture2D" uid="uid://kd7p8hou1dcu" path="res://Assets/Sprites/selected.png" id="4_46ne1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jjvhh"]
 size = Vector2(126, 192)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lev7e"]
-atlas = ExtResource("3_8h8ol")
-region = Rect2(800, 0, 200, 200)
+atlas = ExtResource("3_wjwst")
+region = Rect2(200, 1000, 200, 200)
 
 [node name="StoryCard" type="Area2D" groups=["story_card"]]
-script = ExtResource("1_cxbvt")
-body = "[left]No text on this card. Edit body export variable to add text. [/left]
-"
+script = ExtResource("1_y46v6")
+body = "[left]\"Tomorrow could be it\" Maria said[/left]
+\"Yeah, let's hope it is\" Peter answered shuffling closer to her, pressing his nose to her back and breathing in her scent. Oh how he loved these slow moments as well as hearing her voice, those rolling r's that revealed her accent.
+[left]\"You really did it\" Peter continued[/left]
+\"No love, we did it\" Maria said with a laugh and Peter just smiled to himself. He knew that it was her brilliant mind that had finally cracked the code, her work these last three months meant that they were so close now.
+[left]\"We better try and get some sleep, it will be a long day tomorrow\" Maria said.[/left]
+[left]\"Love you M\" Peter said and kissed her between the shoulder blades.[/left]
+[left]\"Love you too\"[/left]"
+event_number = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_jjvhh")
@@ -33,7 +39,7 @@ offset_bottom = 102.5
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme = ExtResource("2_8h8ol")
+theme = ExtResource("2_cr64y")
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
 layout_mode = 2
@@ -53,7 +59,7 @@ layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 3.0
 mouse_filter = 2
-text = "Story Card Template
+text = "Love and Science
 "
 fit_content = true
 horizontal_alignment = 1
@@ -80,7 +86,7 @@ mouse_filter = 2
 [node name="SelectedSprite" type="Sprite2D" parent="."]
 position = Vector2(1.19209e-06, 1.49999)
 scale = Vector2(0.71, 1.105)
-texture = ExtResource("4_8h8ol")
+texture = ExtResource("4_46ne1")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]
