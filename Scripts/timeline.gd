@@ -19,14 +19,14 @@ func _input(event: InputEvent) -> void:
 			return
 		for i in range(visible_cards.size()):
 			visible_cards[i] -= 1
-		organize_cards()
+		organize_cards("left")
 	if event.is_action_pressed("scroll_right"):
-		if visible_cards.back() == placed_cards.size() + 1 or visible_cards.size() > placed_cards.size():
+		if visible_cards.back() == placed_cards.size() or visible_cards.size() > placed_cards.size():
 			print("Already scrolled all the way to the right")
 			return
 		for i in range(visible_cards.size()):
 			visible_cards[i] += 1
-		organize_cards()
+		organize_cards("right")
 	
 func _on_card_dropped(dropped_card: Card):
 	if dropped_card in get_overlapping_areas():
@@ -50,7 +50,7 @@ func _on_card_dragged(dragged_card: Card):
 		return
 	placed_cards.erase(dragged_card)
 
-func organize_cards():
+func organize_cards(dir: String = "none"):
 	var total_width: float = $CollisionShape2D.shape.size.x
 	var left_edge: float = global_position.x - total_width / 2
 	var offset: float = left_edge + padding + card_width / 2
@@ -64,9 +64,19 @@ func organize_cards():
 		if placed_cards.find(placed_card) not in visible_cards:
 			placed_card.visible = false
 		else:
+			var target_pos = Vector2(card_width * i + offset, global_position.y)
+			var tween = create_tween()
 			placed_card.visible = true
 			placed_card.z_index = 0 #This places them behind the left/right covers
-			placed_card.global_position = Vector2(card_width * i + offset, global_position.y)
+			match dir:
+				"none":
+					placed_card.global_position = target_pos
+				"left":
+					placed_card.global_position = Vector2(card_width * (i - 1) + offset, global_position.y)
+					tween.tween_property(placed_card, "global_position", target_pos, 0.5)
+				"right":
+					placed_card.global_position = Vector2(card_width * (i + 1) + offset, global_position.y)
+					tween.tween_property(placed_card, "global_position", target_pos, 0.5)
 			i += 1
 			
 
