@@ -1,0 +1,89 @@
+[gd_scene load_steps=7 format=3 uid="uid://bdswo3uimtl12"]
+
+[ext_resource type="Script" uid="uid://bfgpq3obygaei" path="res://Scripts/story_card.gd" id="1_56pi0"]
+[ext_resource type="Theme" uid="uid://gtweqjsmt5k" path="res://default_ui_theme.tres" id="2_6d5ui"]
+[ext_resource type="Texture2D" uid="uid://d14eog7ypgap1" path="res://Assets/Sprites/Icons.png" id="3_e2nbd"]
+[ext_resource type="Texture2D" uid="uid://kd7p8hou1dcu" path="res://Assets/Sprites/selected.png" id="4_yidd1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jjvhh"]
+size = Vector2(126, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lev7e"]
+atlas = ExtResource("3_e2nbd")
+region = Rect2(1000, 400, 200, 200)
+
+[node name="StoryCard" type="Area2D" groups=["story_card"]]
+script = ExtResource("1_56pi0")
+body = "[left]\"I promise I won't shoot them unless strictly necessary okay?\" Sarah said readying the shotgun.[/left]
+
+With that they got ready. They had fastened the syringes to broom handles, home made spears loaded with the cure. Matthew held the weapon, that he hoped would save his friends, in trembling hands. They went to the cupboard where Maria was held. Sarah stood at the ready a few paces from the door while Rose went up and opened it. Inside Maria sat, slumped against the back wall with an oversized lab coat put on backwards. She let out a scream but before she could get up Matthew planted the syringe in her chest and the dose was administered. They quickly slammed the door shut and went over to the bathroom where Peter had locked himself in.
+"
+event_number = 21
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_jjvhh")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -65.0
+offset_top = -102.5
+offset_right = 65.0
+offset_bottom = 102.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("2_6d5ui")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+custom_minimum_size = Vector2(100, 150)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="CardHeader" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+mouse_filter = 2
+text = "Maria"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+texture = SubResource("AtlasTexture_lev7e")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Spacer3" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="SelectedSprite" type="Sprite2D" parent="."]
+position = Vector2(1.19209e-06, 1.49999)
+scale = Vector2(0.71, 1.105)
+texture = ExtResource("4_yidd1")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
+[connection signal="input_event" from="." to="." method="_on_input_event"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://d4llv7opqcv4p"]
+[gd_scene load_steps=33 format=3 uid="uid://d4llv7opqcv4p"]
 
 [ext_resource type="Script" uid="uid://cxkgkg0ts864s" path="res://Scripts/card_manager.gd" id="2_bo1nx"]
 [ext_resource type="Script" uid="uid://1rwkskq6tj2n" path="res://Scripts/spawner.gd" id="2_fdnlq"]
@@ -19,7 +19,17 @@
 [ext_resource type="Texture2D" uid="uid://c0q1pe2p237yj" path="res://Assets/Sprites/LeftSideCoverClean.png" id="11_6iyac"]
 [ext_resource type="Texture2D" uid="uid://b2d57lg08nxkw" path="res://Assets/Sprites/HourglassBlue.png" id="11_fdnlq"]
 [ext_resource type="PackedScene" uid="uid://c38pdwjysuqyn" path="res://Scenes/StoryCards/Batch3/zombie_slug.tscn" id="13_u50mg"]
+[ext_resource type="PackedScene" uid="uid://0n8kcb2tn331" path="res://Scenes/StoryCards/Batch4/its_foul.tscn" id="14_7k868"]
 [ext_resource type="PackedScene" uid="uid://c4wqb8d841rrl" path="res://Scenes/StoryCards/Batch3/the_plea.tscn" id="14_jkdf5"]
+[ext_resource type="PackedScene" uid="uid://bntqpr7kqkaw3" path="res://Scenes/StoryCards/Batch4/peter.tscn" id="15_hpc6h"]
+[ext_resource type="PackedScene" uid="uid://ry2qyxodyunx" path="res://Scenes/StoryCards/Batch4/planning_betrayal.tscn" id="16_kltya"]
+[ext_resource type="PackedScene" uid="uid://cw4a56f3hcfje" path="res://Scenes/StoryCards/Batch4/the_supplies.tscn" id="17_e08e2"]
+[ext_resource type="PackedScene" uid="uid://cca36fncideme" path="res://Scenes/StoryCards/Batch5/nathaniel_in_charge.tscn" id="18_neg2b"]
+[ext_resource type="PackedScene" uid="uid://d1p6p1ih822fr" path="res://Scenes/StoryCards/Batch5/so_close.tscn" id="19_r33sp"]
+[ext_resource type="PackedScene" uid="uid://bl6d8su2h8s48" path="res://Scenes/StoryCards/Batch5/the_bite.tscn" id="20_hdf80"]
+[ext_resource type="PackedScene" uid="uid://bdswo3uimtl12" path="res://Scenes/StoryCards/Batch6/maria.tscn" id="21_jwpg7"]
+[ext_resource type="PackedScene" uid="uid://ce6j28qmueq7s" path="res://Scenes/StoryCards/Batch6/sarah_awakened.tscn" id="22_k2e45"]
+[ext_resource type="PackedScene" uid="uid://ds3ckt0uap5mp" path="res://Scenes/StoryCards/Batch6/you_saved_us_all.tscn" id="23_536cc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6iyac"]
 bg_color = Color(0.61, 0.467667, 0.183, 1)
@@ -48,6 +58,9 @@ script = ExtResource("2_fdnlq")
 batch_1 = Array[PackedScene]([ExtResource("7_hptm8"), ExtResource("5_344ge"), ExtResource("4_6bp64"), ExtResource("6_ynf5e")])
 batch_2 = Array[PackedScene]([ExtResource("7_hibaj"), ExtResource("8_pdsj5"), ExtResource("9_ee4r6")])
 batch_3 = Array[PackedScene]([ExtResource("10_gt3je"), ExtResource("11_3pmx8"), ExtResource("14_jkdf5"), ExtResource("13_u50mg")])
+batch_4 = Array[PackedScene]([ExtResource("14_7k868"), ExtResource("15_hpc6h"), ExtResource("16_kltya"), ExtResource("17_e08e2")])
+batch_5 = Array[PackedScene]([ExtResource("18_neg2b"), ExtResource("19_r33sp"), ExtResource("20_hdf80")])
+batch_6 = Array[PackedScene]([ExtResource("21_jwpg7"), ExtResource("22_k2e45"), ExtResource("23_536cc")])
 
 [node name="SpawnPosition" type="Node2D" parent="Spawner"]
 position = Vector2(87, 172)
@@ -131,6 +144,7 @@ position = Vector2(607, 106)
 texture = ExtResource("11_fdnlq")
 
 [node name="LeftSideCover" type="Sprite2D" parent="Timeline/TimelineVisual"]
+visible = false
 z_index = 10
 z_as_relative = false
 position = Vector2(78, 113)

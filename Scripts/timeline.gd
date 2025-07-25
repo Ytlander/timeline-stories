@@ -101,8 +101,9 @@ func _on_check_button_pressed() -> void:
 			show_message("Wrong order, try again!", "Incorrect")
 			return
 		if placed_card == placed_cards.back():
-			#The success message is now handled by the reading area
-			#show_message("Good job, you placed the cards in the correct order!", "Success")
+			if card_batch == 6:
+				show_message("Good job, you placed all the cards in the correct order!", "Win")
+				return
 			EventBus.validate_successful.emit(card_batch)
 			card_batch += 1
 			return
