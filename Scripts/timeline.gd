@@ -57,9 +57,7 @@ func organize_cards(dir: String = "none"):
 	var offset_x: float = $CollisionShape2D.position.x
 	var left_edge: float = global_position.x + offset_x - total_width / 2
 	var offset: float = left_edge + padding + card_width / 2
-	
-	print(total_width)
-	print(left_edge)
+
 	var i: int = 0
 	
 	if placed_cards.is_empty():
