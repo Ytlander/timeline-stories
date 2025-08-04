@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://d4llv7opqcv4p"]
+[gd_scene load_steps=34 format=3 uid="uid://d4llv7opqcv4p"]
 
 [ext_resource type="Script" uid="uid://cxkgkg0ts864s" path="res://Scripts/card_manager.gd" id="2_bo1nx"]
 [ext_resource type="Script" uid="uid://1rwkskq6tj2n" path="res://Scripts/spawner.gd" id="2_fdnlq"]
@@ -33,6 +33,9 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6iyac"]
 bg_color = Color(0.61, 0.467667, 0.183, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7k868"]
+size = Vector2(1221, 200)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ynf5e"]
 texture = ExtResource("10_d1ilt")
@@ -119,6 +122,11 @@ position = Vector2(81, 181)
 
 [node name="Timeline" parent="." instance=ExtResource("8_344ge")]
 position = Vector2(340, 536)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Timeline"]
+position = Vector2(282.5, 0)
+shape = SubResource("RectangleShape2D_7k868")
+debug_color = Color(0.766553, 0.00337064, 0.45227, 0.42)
 
 [node name="AcceptDialog" type="AcceptDialog" parent="Timeline"]
 position = Vector2i(0, 36)

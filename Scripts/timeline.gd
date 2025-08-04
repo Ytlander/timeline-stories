@@ -4,7 +4,7 @@ extends Area2D
 @export var padding: float = 20
 
 var placed_cards: Array[Card] = []
-var visible_cards: Array[int] = [0,1,2,3]
+var visible_cards: Array[int] = [0,1,2,3,4,5]
 
 var card_batch: int = 1
 
@@ -52,15 +52,20 @@ func _on_card_dragged(dragged_card: Card):
 
 func organize_cards(dir: String = "none"):
 	var total_width: float = $CollisionShape2D.shape.size.x
-	var left_edge: float = global_position.x - total_width / 2
+	#We need the offset between the parent and the shape to find the left edge correctly
+	#If we don't have this offset we get varying results depending on how big the shape is
+	var offset_x: float = $CollisionShape2D.position.x
+	var left_edge: float = global_position.x + offset_x - total_width / 2
 	var offset: float = left_edge + padding + card_width / 2
 	
+	print(total_width)
+	print(left_edge)
 	var i: int = 0
 	
 	if placed_cards.is_empty():
 		return
 		
-	if placed_cards.size() < 4:
+	if placed_cards.size() < 7:
 		for placed_card in placed_cards:
 			var target_pos = Vector2(card_width * (i + 1) + offset, global_position.y)
 			placed_card.global_position = target_pos
