@@ -1,7 +1,9 @@
 extends Area2D
 
 @export var card_width: float = 150
-@export var padding: float = 20
+@export var padding: float = 8
+
+@onready var dummy: Card = Card.new()
 
 var placed_cards: Array[Card] = []
 var visible_cards: Array[int] = [0,1,2,3,4,5,6,7]
@@ -14,9 +16,17 @@ func _ready() -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("scroll_left"):
-		if visible_cards[0] == 0:
-			print("Already scrolled all the way to the left")
+		if visible_cards[0] == 0 and placed_cards.size() >= 7:
+			if placed_cards[0] == dummy:
+				print("Already scrolled all the way to the left")
+				return	
+			placed_cards.insert(0, dummy)
+			organize_cards("left")
+			print("inserted dummy card")
 			return
+		if placed_cards.size() < 7:
+			print("Already scrolled all the way to the left")
+			return	
 		for i in range(visible_cards.size()):
 			visible_cards[i] -= 1
 		organize_cards("left")
@@ -64,6 +74,8 @@ func organize_cards(dir: String = "none"):
 		return
 		
 	if placed_cards.size() < 7:
+		if placed_cards.front() == dummy:
+			placed_cards.pop_front()
 		for placed_card in placed_cards:
 			var target_pos = Vector2(card_width * (i + 1) + offset, global_position.y)
 			placed_card.global_position = target_pos
