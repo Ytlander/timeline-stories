@@ -4,7 +4,7 @@ extends Area2D
 @export var padding: float = 20
 
 var placed_cards: Array[Card] = []
-var visible_cards: Array[int] = [0,1,2,3,4,5]
+var visible_cards: Array[int] = [0,1,2,3,4,5,6,7]
 
 var card_batch: int = 1
 
