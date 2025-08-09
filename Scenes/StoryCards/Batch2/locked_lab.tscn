@@ -14,13 +14,13 @@ region = Rect2(1200, 600, 200, 200)
 
 [node name="StoryCard" type="Area2D" groups=["story_card"]]
 script = ExtResource("1_v5dvv")
-body = "Matthew and Sarah reached the labs double doors. Heavy footsteps from boots came toward them from the other corridor. The three guards, Nathaniel, Rose and Theo arrived, making up the rest of the guard unit. Sarah gave a shotgun each to Rose and Theo. Sarah drew her pistol and signaled to the others to get ready. She felt the handle of the door, locked. She didn't know why she had expected anything else. She unlocked the door with the master key that was always on her, but it still wouldn't open. Peter must have barred it from the inside.
+body = "Matthew and Sarah reached the labs double doors and were met with heavy footsteps of boots coming from the other corridor. Nathaniel, Rose and Theo arrived, making up the rest of the guard unit. Sarah gave a shotgun each to Rose and Theo, while she drew her pistol she signaled to the others to get ready. She banged on the door with her fist.
 
-[left]\"Hey Peter!\" Sarah shouted as she banged on the door \"open up!\". Peter didn't answer.[/left]
-[left]\"Why the hell isn't he answering\" Sarah muttered to the others in frustration.[/left]
-[left]\"You know Peter, when he is in his work, nothing can disturb him\" Matthew said.[/left]
-[left]\"Shit!\" Sarah kicked the door. \"We gotta get this thing opened fast\"[/left]
-[left]\"Sarah, listen...\" Matthew started but Sarah cut him off.[/left]"
+[left]\"Hey Peter, open up! Peter didn't answer her.
+\"Why the hell isn't he talking to us\" Sarah muttered to herself in frustration
+\"He knows what you'll do to him and his wife if he lets you in, he knows the protocol\" Matthew said.
+\"Shit!\" Sarah said and kicked the door. \"We have to get this opened fast!\"
+\"Sarah, listen...\" Matthew started but Sarah cut him off.[/left]"
 event_number = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

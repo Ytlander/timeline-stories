@@ -14,11 +14,11 @@ region = Rect2(600, 400, 200, 200)
 
 [node name="LabElevator" type="Area2D" groups=["story_card"]]
 script = ExtResource("1_3jn1p")
-body = "Matthew realized that there was another way, he could not get himself into the lab but he could get Peter the supplies that he needed. The facility had labs on multiple floors and some were paired with a small elevator for sending samples between them. He ran as quickly as he could to the lab below Maria's as this one was connected by such an elevator.
+body = "The sample elevators was his ticket to get the alcohol into Maria's lab. The facility had labs on multiple floors and some were connected with a small elevator for sending samples between them. He ran as quickly as he could to the lab that lay below Maria's that had such an elevator.
 
-Inside the lab he opened the supplies closet and scanned the shelves. On the top one he found the medicinal alcohol, standing on his toes he could just reach and grab a bottle. He loaded the elevator with it and pressed the button to send it up to Peter.
+When he go inside he opened the supplies closet and scanned the shelves. On the top one he found the medicinal alcohol. Standing on his toes he could just reach and grab a bottle. He loaded the elevator with it and pressed to button to send it up to Peter.
 
-Matthew hurried back to the guard room to continue watching. When he got there Peter had already continued his work, Matthew let out a small sigh of relief, but his work wasn't over yet. Now Matthew needed to win time for Peter so that he could finish the work. He glanced toward the double doors, the only entrance to the lab, and it bulged inward from the smashing it received from Sarah's home made battering ram."
+He returned to the guard room and as he got there Peter had already continued his work. Matthew let out a small sigh of relief but knew that his work was not over yet. He needed to buy time for Peter and as he watched the double door bulge inwards from the smashing it received from Sarah's home made battering ram, he knew what he had to do. He would have to betray Sarah."
 event_number = 11
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

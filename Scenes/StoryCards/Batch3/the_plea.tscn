@@ -17,16 +17,14 @@ script = ExtResource("1_hvehd")
 body = "[left]“Sarah, wait” Matthew said and she spun around facing him. They were in the corridor just outside the guard room.
 “What is it?” her voice tense but controlled
 \"Did you see Peter in there? Did you understand what he was doing?\" Matthew asked her.
-\"He looked like he always does when he is working...\"[/left]
+\"He looked like he always does when he is working...\"
 \"Exactly! The love of his life has turned into a zombie and he is not breaking down, instead he is hyper focusing. I know they were close to figuring this out Sarah, but what if they are so close that Peter could actually save Maria and himself?\"
-[left]Sarah started walking down the corridor, Matthew ran up beside her.[/left]
+Sarah started walking down the corridor, Matthew ran up beside her.
 \"I'm sorry Matthew but we can't risk it. We need to contain this as soon as possible\" Sarah said, her gaze straight ahead.
 \"He still has time and he is the most brilliant mind in here right now, we can't loose him too!\" Panicked notes mingled in Matthews plea.
 \"It's protocol and for a damn good reason. We all signed off on it and if we don't follow, we will all be dead and you know it!\"
-[left]\"Sarah, I owe you my life a hundred times over but that doesn't mean that you are always right\"[/left]
-\"This has nothing to do with being right, this is about survival\" Sarah said and picked up the pace. They rounded a corner and Sarah unlocked a door labeled \"armory\"
-
-"
+\"Sarah, I owe you my life a hundred times over but that doesn't mean that you are always right\" [/left]
+\"This has nothing to do with being right, this is about survival\" Sarah said and picked up the pace. They rounded a corner and Sarah unlocked a door labeled -Armory-."
 event_number = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

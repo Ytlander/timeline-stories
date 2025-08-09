@@ -20,7 +20,9 @@ body = "[left]\"Tomorrow could be it\" Maria said[/left]
 \"No love, we did it\" Maria said with a laugh and Peter just smiled to himself. He knew that it was her brilliant mind that had finally cracked the code, her work these last three months meant that they were so close now.
 [left]\"We better try and get some sleep, it will be a long day tomorrow\" Maria said.[/left]
 [left]\"Love you M\" Peter said and kissed her between the shoulder blades.[/left]
-[left]\"Love you too\"[/left]"
+[left]\"Love you too\"[/left]
+
+And they both fell asleep."
 event_number = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

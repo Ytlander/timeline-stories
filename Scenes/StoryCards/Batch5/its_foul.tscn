@@ -14,9 +14,9 @@ region = Rect2(400, 400, 200, 200)
 
 [node name="StoryCard" type="Area2D" groups=["story_card"]]
 script = ExtResource("1_f8wj7")
-body = "\"It's not quite a Gold Rush, phew, it's foul!\" but Sarah kept laughing and passed the bottle back to Matthew who put the flask up to his mouth, only sipping on the drink and then giving Sarah the bottle again. The tranquilizer was potent and she wouldn't need to drink much more, he would probably pass out as well, but that didn't really matter, the commotion of their commander being taken out of commission would probably buy Peter enough time to finish his work. They passed the flask back and forth a few more times to the rhythmic crashing of the battering ram against the door. Matthew was impressed at how well Peter had barricaded himself in there.
+body = "\"It's not quite a Gold Rush, phew, it's foul!\" Sarah said but kept laughing and passed the bottle back to Matthew who put the flask up to his mouth, only sipping the drink and then giving back the bottle to Sarah. He hoped the commotion of losing their leader would give Peter enough time to finish his work. The others lacked the training and discipline that Sarah had, they had all been office workers before all of this. They passed the flask back and forth a few more times to the rhythmic crashing of the battering ram against the door. Matthew was impressed at how well Peter had barricaded himself in there.
 
-[left]\"Man, you look funny, this is one funny situation!\" Sarah said with a slurred voice.[/left]
+[left]\"Man, you look funny. This is one funny situation!\" Sarah said with a slurred voice.[/left]
 \"Hey, let's sit down on the floor for a little bit\" he said and Sarah listened to him, a clear sign that the drink was taking effect. After sitting down, Sarah took another big swig of the flask, her inhibitions gone at this point, a few seconds later she slumped over and fell asleep."
 event_number = 14
 

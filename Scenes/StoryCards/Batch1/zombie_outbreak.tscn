@@ -14,14 +14,15 @@ region = Rect2(800, 800, 200, 200)
 
 [node name="zombie_outbreak" type="Area2D" groups=["story_card"]]
 script = ExtResource("1_apglg")
-body = "Sarah was standing in the guard room in front of the surveillance screens, her guard captain insignia on the left side of her chest gleamed in the blue light from the screens and her crisp dark blue uniform stood in stark contrast to her furrowed brow. How did this happen? She had drilled the scientists to take every precaution when handling the infected rats, and Maria was the most brilliant among then, it wasn't like her to skimp on protocol. It didn't matter now, Maria had turned and she had infected Peter. They were both lost.
+body = "Sarah was standing in the guard room in front of the surveillance screens, her guard captain insignia on the left side of her chest gleamed in the blue light from the monitors and her crisp blue uniform stood in stark contrast to her furrowed brow. She could not believe what she had just witnessed, Maria had turned, attacked and infected Peter who had immediately broken protocol by locking Maria in a supply closet and barring the door to the lab.
 
-Beside Sarah stood her life long friend, Matthew. He was an assistant at the lab and worked closely with Maria and Peter. She could see a tear slowly trickling down his cheek, nestling in his short trimmed beard. He put his morning coffee down on the desk with trembling hands. \"What should we do?\" he asked and looked at Sarah.
+Beside Sarah stood her life long friend, Matthew. He was an assistant at the lab and worked with Maria and Peter. She could see a tear slowly trickling down his cheek. He put his cup cup down on the desk with trembling hands.
+[left]\"What should we do?\" he asked and looked at Sarah[/left]
 
-\"I'll have to go get Nathaniel and the others from our guard unit and then we'll head for Maria's lab\" she said \"I'll need to go by the armory and get the shotguns first, but really Matthew, I think you should stay here\"
-[left]\"No way, I'm coming with you!\" Matthew said. Sarah sighed and looked at her friend, he was determined.[/left]
-[left]\"I won't stop you\" she said.[/left]
-Matthew hesitated as if to say something more but didn't and with that Sarah turned around and left the room, with Matthew right behind her."
+\"Peter has broken protocol, we have to contain this fast. I will call for the others to meet me outside the lab while I go by the armory to get shotguns.\" Sarah paused for a second looking at Matthew \"I really think you should stay here, or even better, go to the dormitories and wait for the all clear\"
+[left]\"No way! I'm coming with you.\" Matthew said. Sarah sighed and looked at his determined face.
+\"Fine, I won't stop you\" she said \"But you need to stay back and do as I say at all times\"[/left]
+Sarah opened the door and exited the guard room with Matthew right behind her."
 event_number = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

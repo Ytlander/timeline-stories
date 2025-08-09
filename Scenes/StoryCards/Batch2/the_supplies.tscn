@@ -14,17 +14,17 @@ region = Rect2(1000, 800, 200, 200)
 
 [node name="StoryCard" type="Area2D" groups=["story_card"]]
 script = ExtResource("1_qx0ge")
-body = "Matthew ran toward the storage unit down the hall. He knew they had the medicinal alcohol in there that Peter needed, but how would he get it to him. Could he convince Sarah to let him speak to Peter and deliver the alcohol without them barging in there? He had to try right? He stopped and turned around, no use in getting the alcohol before convincing Sarah.
+body = "Matthews head was racing. How could he get the supplies to Peter, could he convince Sarah to let him speak to Pete and deliver the alcohol without them barging in there? He had to try right? He left the lab coat in the guard room and ran toward the lab again. 
 
-When he reached the lab Sarah and the others was just about to smash the door with a locker tied down on top of a rolling table.
+When Matthew reached the lab Sarah and the others was just about to smash the door with a locker tied down on top of a rolling table.
 
-[left]\"Sarah, wait! Peter needs supplies, let me talk to him so I can assist him\" Matthew said.[/left]
-\"Stay clear Matthew, we don't have time, Peter has broken protocol, he should never have locked himself in like this\" Sarah said.
-[left]\"But I can't let you do this, we are so close!\" As Matthew said the words tears were forming in his eyes.[/left]
+[left]\"Sarah, wait! Peter needs supplies, let me talk to him so I can assist him\" Matthew said.
+\"Stay clear Matthew, we don't have time, Peter should never have locked himself in like this\" Sarah said.
+\"But I can't let you do this, we are so close!\" As Matthew said the words tears were forming in his eyes.[/left]
 \"If you don't back down I will have no choice but to put you in lockup. I am not losing you and I'm not losing any more people, Peter and Maria is bad enough\" Sarah barked at him.
-[left]\"Fucking hell Sarah! There are bigger things at stake here than just survival\" Matthew screamed back at her.[/left]
-\"Theo, Nate, take Matthew away\" Sarah's order cut through the conversation like a cold knife. Matthew immediately taking a step back.
-\"Fine, fine! I'll leave. I wont interfere\" and with that he turned around and ran away. Because he had just remembered the sample elevators."
+[left]\"Fucking hell Sarah! There are bigger things at stake here than just survival\" Matthew screamed back at her.
+\"Theo, Nate, take Matthew away\" Sarah's order cut through the conversation like a cold knife. Matthew immediately took a step back.
+\"Fine, fine! I'll leave. I wont interfere\" and with that he turned around and ran away. Because he had just remembered the sample elevators. [/left]"
 event_number = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

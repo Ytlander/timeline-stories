@@ -14,13 +14,16 @@ region = Rect2(0, 200, 200, 200)
 
 [node name="TheNote" type="Area2D" groups=["story_card"]]
 script = ExtResource("1_i1kra")
-body = "Matthew
+body = "Matthew was looking at Nathaniel, Rose and Theo as they stood in the smoke amidst the rubble. Peter was nowhere to be seen and they hadn't noticed Matthew. Nathaniel found a note on the desk that he pickup up and read aloud for the others.
 
-I was so close but I didn’t have time to synthesize the cure. The instructions are all here. Please help me finish the work. I have locked myself in the bathroom and Maria is in the supply closet. Don’t let them kill us, the cure can save us all.
+Matthew
 
+I was so close but I didn’t have time synthesize the cure. The instructions are all here. Please help me finish the work. I have locked myself in the bathroom and Maria is in the supply closet. Don’t let them kill us, the cure can save us all.
+Your friend and colleague
 
-[left]Your friend and colleague[/left]
-Peter"
+Peter
+
+Matthew took a couple of steps forward into the room and cleared his throat to speak."
 event_number = 18
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

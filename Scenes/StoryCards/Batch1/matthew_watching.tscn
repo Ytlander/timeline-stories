@@ -14,11 +14,11 @@ region = Rect2(400, 800, 200, 200)
 
 [node name="MatthewWatching" type="Area2D" groups=["story_card"]]
 script = ExtResource("1_3jn1p")
-body = "Matthews head was spinning as he ran back towards the guard room. A slug could be birthed by a female zombie, sure, but Peter hadn't turned yet and protocol be damned, they couldn't just run in there with shotguns and... he couldn't bring himself to finish the thought. He felt the fabric of his shirt stick to his back and as he entered the guard room he tore off the white lab coat, throwing it on one of the chairs.
+body = "Matthews head was spinning as he ran back towards the guard room. A slug could be birthed by a female zombie, sure, but Peter hadn't turned yet and protocol be damned, they couldn't just run in their with shotguns and... he couldn't bring himself to finish the thought. He felt the fabric of his shirt stick to his back and as he entered the guard room once again he tore of the white lab coat, throwing it on one of the chairs.
 
-He stared at the screen showing Maria's lab, what are you up to Peter? He was all over the place, working at a speed Matthew had never seen before. Matthew knew they were close to a breakthrough but Peter needed that breakthrough to happen now. Was there anyway he could help? As soon as Matthew had thought this he saw how Peter slammed his fist on the desk and slumped in a chair crying.
+He stared at the screen showing Maria's lab. He observed Peter working in there with the fervor only a desperate, yet hopeful, man could have. Matthew knew that they had been close to a breakthrough but they must be even closer than he first had thought for Peter to not break down over his wife turning. As soon as Matthew had thought this he saw how Peter slammed his fist on the desk and slumped in a chair crying.
 
-Was it all over, had Peter given up? He zoomed in on his mentor in some futile attempt to console him. Peter looked up, directly at the camera, had he heard the whirring of the zoom? He got up and hurried over to a table, grabbed a pen and scribbled something on a piece of paper. Peter held the paper up to the camera: \"I'm out of medicinal alcohol, help!\""
+Was it all over, had Peter given up? Matthew zoomed in hon his mentor in a futile attempt to console him. Peter looked up, directly at the camera, had he heart the whirring of the zoom? He got up and hurried over to a table, grabbed a pen and scribbled something on a piece of paper. Peter helt the paper up to the camera: \"I'm out of medicinal alcohol, help!\""
 event_number = 9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
