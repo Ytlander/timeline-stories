@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://d4llv7opqcv4p"]
+[gd_scene load_steps=34 format=3 uid="uid://d4llv7opqcv4p"]
 
 [ext_resource type="Script" uid="uid://cxkgkg0ts864s" path="res://Scripts/card_manager.gd" id="2_bo1nx"]
 [ext_resource type="Script" uid="uid://1rwkskq6tj2n" path="res://Scripts/spawner.gd" id="2_fdnlq"]
@@ -25,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://cca36fncideme" path="res://Scenes/StoryCards/Batch5/nathaniel_in_charge.tscn" id="18_neg2b"]
 [ext_resource type="PackedScene" uid="uid://bntqpr7kqkaw3" path="res://Scenes/StoryCards/Batch5/peter.tscn" id="19_6vcvc"]
 [ext_resource type="PackedScene" uid="uid://d1p6p1ih822fr" path="res://Scenes/StoryCards/Batch5/so_close.tscn" id="19_r33sp"]
+[ext_resource type="PackedScene" uid="uid://0n8kcb2tn331" path="res://Scenes/StoryCards/Batch5/its_foul.tscn" id="20_7k868"]
 [ext_resource type="PackedScene" uid="uid://bl6d8su2h8s48" path="res://Scenes/StoryCards/Batch4/the_bite.tscn" id="20_hdf80"]
 [ext_resource type="PackedScene" uid="uid://bdswo3uimtl12" path="res://Scenes/StoryCards/Batch6/maria.tscn" id="21_jwpg7"]
 [ext_resource type="PackedScene" uid="uid://ce6j28qmueq7s" path="res://Scenes/StoryCards/Batch6/sarah_awakened.tscn" id="22_k2e45"]
@@ -61,7 +62,7 @@ batch_1 = Array[PackedScene]([ExtResource("7_hptm8"), ExtResource("5_344ge"), Ex
 batch_2 = Array[PackedScene]([ExtResource("7_hibaj"), ExtResource("11_3pmx8"), ExtResource("17_e08e2")])
 batch_3 = Array[PackedScene]([ExtResource("10_gt3je"), ExtResource("14_jkdf5"), ExtResource("13_u50mg"), ExtResource("13_ueoa1")])
 batch_4 = Array[PackedScene]([ExtResource("16_kltya"), ExtResource("15_6vcvc"), ExtResource("20_hdf80")])
-batch_5 = Array[PackedScene]([ExtResource("18_neg2b"), ExtResource("19_r33sp"), ExtResource("19_6vcvc")])
+batch_5 = Array[PackedScene]([ExtResource("18_neg2b"), ExtResource("19_r33sp"), ExtResource("19_6vcvc"), ExtResource("20_7k868")])
 batch_6 = Array[PackedScene]([ExtResource("21_jwpg7"), ExtResource("22_k2e45"), ExtResource("23_536cc")])
 
 [node name="SpawnPosition" type="Node2D" parent="Spawner"]
