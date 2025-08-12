@@ -48,8 +48,8 @@ texture_margin_bottom = 5.0
 
 [node name="Background" type="Panel" parent="."]
 z_index = -100
-offset_right = 1293.0
-offset_bottom = 710.0
+offset_right = 1392.0
+offset_bottom = 782.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_6iyac")
 
