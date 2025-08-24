@@ -5,6 +5,8 @@ extends Area2D
 
 @onready var dummy: Card = Card.new()
 
+@onready var htl: HorizontalTimeline = $HorizontalTimeLine
+
 var placed_cards: Array[Card] = []
 var visible_cards: Array[int] = [0,1,2,3,4,5,6,7]
 
@@ -16,49 +18,25 @@ func _ready() -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("scroll_left"):
-		if visible_cards[0] == 0 and placed_cards.size() >= 7:
-			if placed_cards[0] == dummy:
-				print("Already scrolled all the way to the left")
-				return	
-			placed_cards.insert(0, dummy)
-			organize_cards("left")
-			print("inserted dummy card")
-			return
-		if placed_cards.size() < 7:
-			print("Already scrolled all the way to the left")
-			return	
-		for i in range(visible_cards.size()):
-			visible_cards[i] -= 1
-		organize_cards("left")
+		htl.move_things_left()
 	if event.is_action_pressed("scroll_right"):
-		if visible_cards.back() == placed_cards.size() or visible_cards.size() > placed_cards.size():
-			print("Already scrolled all the way to the right")
-			return
-		for i in range(visible_cards.size()):
-			visible_cards[i] += 1
-		organize_cards("right")
+		htl.move_things_right()
 	
 func _on_card_dropped(dropped_card: Card):
 	if dropped_card in get_overlapping_areas():
-		if placed_cards.is_empty():
-			placed_cards.append(dropped_card)
-			organize_cards()
+		if htl.all_the_things.is_empty():
+			htl.place_thing(dropped_card)
 			return
-		for placed_card in placed_cards:
+		for placed_card in htl.all_the_things:
 			if dropped_card.global_position.x < placed_card.global_position.x:
-				var insert_index: int = placed_cards.find(placed_card)
-				placed_cards.insert(insert_index, dropped_card)
-				organize_cards()
+				var insert_index: int = htl.all_the_things.find(placed_card)
+				htl.place_thing(dropped_card, insert_index)
 				return
-		placed_cards.append(dropped_card)
-		organize_cards()
-	else:
-		organize_cards()
 
 func _on_card_dragged(dragged_card: Card):
-	if dragged_card not in placed_cards:
+	if dragged_card not in htl.all_the_things:
 		return
-	placed_cards.erase(dragged_card)
+	htl.remove_thing(dragged_card)
 
 func organize_cards(dir: String = "none"):
 	var total_width: float = $CollisionShape2D.shape.size.x

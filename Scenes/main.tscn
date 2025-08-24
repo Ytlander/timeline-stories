@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://d4llv7opqcv4p"]
+[gd_scene load_steps=35 format=3 uid="uid://d4llv7opqcv4p"]
 
 [ext_resource type="Script" uid="uid://cxkgkg0ts864s" path="res://Scripts/card_manager.gd" id="2_bo1nx"]
 [ext_resource type="Script" uid="uid://1rwkskq6tj2n" path="res://Scripts/spawner.gd" id="2_fdnlq"]
@@ -30,6 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://bdswo3uimtl12" path="res://Scenes/StoryCards/Batch6/maria.tscn" id="21_jwpg7"]
 [ext_resource type="PackedScene" uid="uid://ce6j28qmueq7s" path="res://Scenes/StoryCards/Batch6/sarah_awakened.tscn" id="22_k2e45"]
 [ext_resource type="PackedScene" uid="uid://ds3ckt0uap5mp" path="res://Scenes/StoryCards/Batch6/you_saved_us_all.tscn" id="23_536cc"]
+[ext_resource type="Script" uid="uid://bhwy7ekti4f63" path="res://features/timeline/horizontal_timeline.gd" id="31_hpc6h"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6iyac"]
 bg_color = Color(0.61, 0.467667, 0.183, 1)
@@ -171,6 +172,19 @@ offset_right = 321.0
 offset_bottom = -113.0
 theme = ExtResource("3_d1ilt")
 text = "VALIDATE"
+
+[node name="HorizontalTimeLine" type="Node" parent="Timeline" node_paths=PackedStringArray("position_of_first_thing", "position_of_last_thing")]
+script = ExtResource("31_hpc6h")
+width_of_the_things = 150.0
+how_far_apart = 20.0
+position_of_first_thing = NodePath("Start")
+position_of_last_thing = NodePath("End")
+
+[node name="Start" type="Node2D" parent="Timeline/HorizontalTimeLine"]
+position = Vector2(226, 538)
+
+[node name="End" type="Node2D" parent="Timeline/HorizontalTimeLine"]
+position = Vector2(785, 532)
 
 [connection signal="pressed" from="Timeline/CheckButton" to="Timeline" method="_on_check_button_pressed"]
 
