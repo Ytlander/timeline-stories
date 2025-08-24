@@ -36,7 +36,7 @@
 bg_color = Color(0.61, 0.467667, 0.183, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7k868"]
-size = Vector2(1221, 200)
+size = Vector2(800, 200)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ynf5e"]
 texture = ExtResource("10_d1ilt")
@@ -125,7 +125,7 @@ position = Vector2(81, 181)
 position = Vector2(340, 536)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Timeline"]
-position = Vector2(282.5, 0)
+position = Vector2(189, 0)
 shape = SubResource("RectangleShape2D_7k868")
 debug_color = Color(0.766553, 0.00337064, 0.45227, 0.42)
 
@@ -135,13 +135,13 @@ theme = ExtResource("3_d1ilt")
 
 [node name="TimelineVisual" type="PanelContainer" parent="Timeline"]
 z_index = -25
-custom_minimum_size = Vector2(1240, 225)
+custom_minimum_size = Vector2(800, 225)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -335.0
 offset_top = -112.0
-offset_right = 905.0
+offset_right = 666.0
 offset_bottom = 113.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -149,7 +149,7 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_ynf5e")
 
 [node name="HourglassBlue" type="Sprite2D" parent="Timeline/TimelineVisual"]
-position = Vector2(607, 106)
+position = Vector2(497, 108)
 texture = ExtResource("11_fdnlq")
 
 [node name="LeftSideCover" type="Sprite2D" parent="Timeline/TimelineVisual"]
@@ -161,7 +161,7 @@ texture = ExtResource("11_6iyac")
 [node name="RightSideCover" type="Sprite2D" parent="Timeline/TimelineVisual"]
 z_index = 10
 z_as_relative = false
-position = Vector2(1162, 113)
+position = Vector2(925, 114)
 texture = ExtResource("11_6iyac")
 flip_h = true
 
@@ -173,12 +173,10 @@ offset_bottom = -113.0
 theme = ExtResource("3_d1ilt")
 text = "VALIDATE"
 
-[node name="HorizontalTimeLine" type="Node" parent="Timeline" node_paths=PackedStringArray("position_of_first_thing", "position_of_last_thing")]
+[node name="HorizontalTimeLine" type="Node2D" parent="Timeline" node_paths=PackedStringArray("left_bound", "right_bound")]
 script = ExtResource("31_hpc6h")
-width_of_the_things = 150.0
-how_far_apart = 20.0
-position_of_first_thing = NodePath("Start")
-position_of_last_thing = NodePath("End")
+left_bound = NodePath("Start")
+right_bound = NodePath("End")
 
 [node name="Start" type="Node2D" parent="Timeline/HorizontalTimeLine"]
 position = Vector2(226, 538)

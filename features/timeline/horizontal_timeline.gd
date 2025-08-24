@@ -1,55 +1,63 @@
 class_name HorizontalTimeline
-extends Node
+extends Node2D
 
-@export var width_of_the_things: float
-@export var how_far_apart: float
-@export var position_of_first_thing: Node2D
-@export var position_of_last_thing: Node2D
+@export var card_width: float = 150
+@export var spacing: float = 8
+@export var left_bound: Node2D
+@export var right_bound: Node2D
 
+var cards: Array[Node2D] = []
 
-var all_the_things: Array
-var max_visible_x
-var min_visible_x
+func _process(_delta: float) -> void:
+	# Toggle visibility depending on bounds
+	for card in cards:
+		card.visible = (
+			card.position.x >= left_bound.position.x - 150
+			and card.position.x <= right_bound.position.x + 150
+		)
 
-func _ready() -> void:
-	max_visible_x = position_of_last_thing.global_position.x + how_far_apart + width_of_the_things
-	min_visible_x = position_of_first_thing.global_position.x - how_far_apart - width_of_the_things
+func place_card(card: Node2D, index: int = -1) -> void:
+	if index < 0 or index > cards.size():
+		index = cards.size()
 	
-func _process(delta: float) -> void:
-	for thing in all_the_things:
-		thing.visible = (thing.global_position.x >= min_visible_x and thing.global_position.x <= max_visible_x)
+	cards.insert(index, card)
+	_realign_cards()
 
-func place_thing(thing, index: int = 0):
-	if all_the_things.is_empty():
-		thing.global_position = position_of_first_thing.global_position
-	else:
-		for i in range(index, all_the_things.size()):
-			all_the_things[i].global_position = all_the_things[i].global_position + Vector2(width_of_the_things + how_far_apart, 0)
-		thing.global_position = all_the_things[index - 1].global_position + Vector2(width_of_the_things + how_far_apart, 0)
-	all_the_things.insert(index, thing)
-	
-func remove_thing(thing):
-	if thing in all_the_things:
-		all_the_things.erase(thing)
+func remove_card(card: Node2D) -> void:
+	if card in cards:
+		cards.erase(card)
+		_realign_cards()
 
-func move_things_left():
-	if all_the_things.is_empty():
+func move_left() -> void:
+	if cards.is_empty():
 		return
-	if all_the_things.back().global_position.x <= position_of_first_thing.global_position.x:
-		print("Can't scroll further to the left yo")
+	if cards.back().position.x - card_width < left_bound.position.x:
+		print("Can't scroll further left")
 		return
-	for thing in all_the_things:
-		var target_pos_x = thing.global_position.x - width_of_the_things - how_far_apart
+	_shift(-1)
+
+func move_right() -> void:
+	if cards.is_empty():
+		return
+	if cards.front().position.x > right_bound.position.x:
+		print("Can't scroll further right")
+		return
+	_shift(1)
+
+func _realign_cards() -> void:
+	if cards.is_empty():
+		return
+
+	var x = left_bound.position.x
+	for card in cards:
+		card.z_index = 0
+		var target_pos = Vector2(x, global_position.y)
 		var tween = create_tween()
-		tween.tween_property(thing, "global_position", Vector2(target_pos_x, thing.global_position.y), 0.5)
-		
-func move_things_right():
-	if all_the_things.is_empty():
-		return
-	if all_the_things.front().global_position.x >= position_of_last_thing.global_position.x:
-		print("Can't scroll further to the right yo")
-		return
-	for thing in all_the_things:
-		var target_pos_x = thing.global_position.x + width_of_the_things + how_far_apart
+		tween.tween_property(card, "global_position", target_pos, 0.3)
+		x += card_width + spacing
+
+func _shift(dir: int) -> void:
+	var delta_x = (card_width + spacing) * dir
+	for card in cards:
 		var tween = create_tween()
-		tween.tween_property(thing, "global_position", Vector2(target_pos_x, thing.global_position.y), 0.5)
+		tween.tween_property(card, "position", card.position + Vector2(delta_x, 0), 0.3)
