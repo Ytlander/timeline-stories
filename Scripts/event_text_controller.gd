@@ -17,7 +17,8 @@ func _on_display_text(card):
 	self.body.text = card.body
 
 func _on_close_textbox():
-	self.visible = false
+	pass
+	#self.visible = false
 
 func _on_validate_successful(_batch_number):
 	self.visible = true

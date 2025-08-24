@@ -13,8 +13,8 @@ func _process(_delta: float) -> void:
 	# Toggle visibility depending on bounds
 	for card in cards:
 		card.visible = (
-			card.position.x >= left_bound.position.x - 150
-			and card.position.x <= right_bound.position.x + 150
+			card.global_position.x >= left_bound.global_position.x - 150
+			and card.global_position.x <= right_bound.global_position.x + 150
 		)
 
 func place_card(card: Node2D, index: int = -1) -> void:
@@ -32,7 +32,8 @@ func remove_card(card: Node2D) -> void:
 func move_left() -> void:
 	if cards.is_empty():
 		return
-	if cards.back().position.x - card_width < left_bound.position.x:
+	if cards.back().global_position.x <= right_bound.global_position.x:
+	#if cards.back().position.x - card_width < left_bound.position.x:
 		print("Can't scroll further left")
 		return
 	_shift(-1)
@@ -40,7 +41,8 @@ func move_left() -> void:
 func move_right() -> void:
 	if cards.is_empty():
 		return
-	if cards.front().position.x > right_bound.position.x:
+	if cards.front().global_position.x >= left_bound.global_position.x:
+	#if cards.front().position.x > right_bound.position.x:
 		print("Can't scroll further right")
 		return
 	_shift(1)
@@ -49,7 +51,7 @@ func _realign_cards() -> void:
 	if cards.is_empty():
 		return
 
-	var x = left_bound.position.x
+	var x = left_bound.global_position.x
 	for card in cards:
 		card.z_index = 0
 		var target_pos = Vector2(x, global_position.y)
@@ -58,7 +60,7 @@ func _realign_cards() -> void:
 		x += card_width + spacing
 
 func _shift(dir: int) -> void:
-	var delta_x = (card_width + spacing) * dir
+	var delta_x = card_width * dir
 	for card in cards:
 		var tween = create_tween()
-		tween.tween_property(card, "position", card.position + Vector2(delta_x, 0), tween_speed)
+		tween.tween_property(card, "global_position", card.global_position + Vector2(delta_x, 0), tween_speed)
