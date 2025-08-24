@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://d4llv7opqcv4p"]
+[gd_scene load_steps=35 format=3 uid="uid://d4llv7opqcv4p"]
 
 [ext_resource type="Script" uid="uid://cxkgkg0ts864s" path="res://Scripts/card_manager.gd" id="2_bo1nx"]
 [ext_resource type="Script" uid="uid://1rwkskq6tj2n" path="res://Scripts/spawner.gd" id="2_fdnlq"]
@@ -30,12 +30,13 @@
 [ext_resource type="PackedScene" uid="uid://bdswo3uimtl12" path="res://Scenes/StoryCards/Batch6/maria.tscn" id="21_jwpg7"]
 [ext_resource type="PackedScene" uid="uid://ce6j28qmueq7s" path="res://Scenes/StoryCards/Batch6/sarah_awakened.tscn" id="22_k2e45"]
 [ext_resource type="PackedScene" uid="uid://ds3ckt0uap5mp" path="res://Scenes/StoryCards/Batch6/you_saved_us_all.tscn" id="23_536cc"]
+[ext_resource type="Script" uid="uid://bhwy7ekti4f63" path="res://features/timeline/horizontal_timeline.gd" id="31_hpc6h"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6iyac"]
 bg_color = Color(0.61, 0.467667, 0.183, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7k868"]
-size = Vector2(1221, 200)
+size = Vector2(800, 200)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ynf5e"]
 texture = ExtResource("10_d1ilt")
@@ -124,7 +125,7 @@ position = Vector2(81, 181)
 position = Vector2(340, 536)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Timeline"]
-position = Vector2(282.5, 0)
+position = Vector2(189, 0)
 shape = SubResource("RectangleShape2D_7k868")
 debug_color = Color(0.766553, 0.00337064, 0.45227, 0.42)
 
@@ -134,13 +135,13 @@ theme = ExtResource("3_d1ilt")
 
 [node name="TimelineVisual" type="PanelContainer" parent="Timeline"]
 z_index = -25
-custom_minimum_size = Vector2(1240, 225)
+custom_minimum_size = Vector2(800, 225)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -335.0
 offset_top = -112.0
-offset_right = 905.0
+offset_right = 666.0
 offset_bottom = 113.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -148,7 +149,7 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_ynf5e")
 
 [node name="HourglassBlue" type="Sprite2D" parent="Timeline/TimelineVisual"]
-position = Vector2(607, 106)
+position = Vector2(497, 108)
 texture = ExtResource("11_fdnlq")
 
 [node name="LeftSideCover" type="Sprite2D" parent="Timeline/TimelineVisual"]
@@ -160,7 +161,7 @@ texture = ExtResource("11_6iyac")
 [node name="RightSideCover" type="Sprite2D" parent="Timeline/TimelineVisual"]
 z_index = 10
 z_as_relative = false
-position = Vector2(1162, 113)
+position = Vector2(925, 114)
 texture = ExtResource("11_6iyac")
 flip_h = true
 
@@ -171,6 +172,17 @@ offset_right = 321.0
 offset_bottom = -113.0
 theme = ExtResource("3_d1ilt")
 text = "VALIDATE"
+
+[node name="HorizontalTimeLine" type="Node2D" parent="Timeline" node_paths=PackedStringArray("left_bound", "right_bound")]
+script = ExtResource("31_hpc6h")
+left_bound = NodePath("Start")
+right_bound = NodePath("End")
+
+[node name="Start" type="Node2D" parent="Timeline/HorizontalTimeLine"]
+position = Vector2(226, 538)
+
+[node name="End" type="Node2D" parent="Timeline/HorizontalTimeLine"]
+position = Vector2(785, 532)
 
 [connection signal="pressed" from="Timeline/CheckButton" to="Timeline" method="_on_check_button_pressed"]
 
