@@ -93,9 +93,9 @@ text = "[left]Left click and hold to move cards
 
 The goal is to arrange the cards in chronological order. When all cards are in the correct place, hit the VALIDATE button
 
-Right click to open and read cards to figure out the order of events
+Use Q and E to scroll through the cards on the timeline
 
-Use Q and E to scroll through the timeline if you run out of room[/left]"
+Right click to open and read cards to figure out the order of events[/left]"
 
 [node name="AnimationController" type="Node" parent="."]
 script = ExtResource("4_jjvhh")
@@ -149,7 +149,7 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_ynf5e")
 
 [node name="HourglassBlue" type="Sprite2D" parent="Timeline/TimelineVisual"]
-position = Vector2(497, 108)
+position = Vector2(410, 108)
 texture = ExtResource("11_fdnlq")
 
 [node name="LeftSideCover" type="Sprite2D" parent="Timeline/TimelineVisual"]
@@ -166,9 +166,9 @@ texture = ExtResource("11_6iyac")
 flip_h = true
 
 [node name="CheckButton" type="Button" parent="Timeline"]
-offset_left = 216.0
+offset_left = 25.0
 offset_top = -144.0
-offset_right = 321.0
+offset_right = 130.0
 offset_bottom = -113.0
 theme = ExtResource("3_d1ilt")
 text = "VALIDATE"
