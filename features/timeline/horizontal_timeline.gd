@@ -5,6 +5,7 @@ extends Node2D
 @export var spacing: float = 8
 @export var left_bound: Node2D
 @export var right_bound: Node2D
+@export var tween_speed: float = 0.2
 
 var cards: Array[Node2D] = []
 
@@ -53,11 +54,11 @@ func _realign_cards() -> void:
 		card.z_index = 0
 		var target_pos = Vector2(x, global_position.y)
 		var tween = create_tween()
-		tween.tween_property(card, "global_position", target_pos, 0.3)
+		tween.tween_property(card, "global_position", target_pos, tween_speed)
 		x += card_width + spacing
 
 func _shift(dir: int) -> void:
 	var delta_x = (card_width + spacing) * dir
 	for card in cards:
 		var tween = create_tween()
-		tween.tween_property(card, "position", card.position + Vector2(delta_x, 0), 0.3)
+		tween.tween_property(card, "position", card.position + Vector2(delta_x, 0), tween_speed)

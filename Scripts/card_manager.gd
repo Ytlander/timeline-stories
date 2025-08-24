@@ -18,7 +18,8 @@ func _ready():
 func _physics_process(delta):
 		if dragged_card != null:
 			Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
-			check_overlapping_cards()
+			dragged_card.z_index = 20
+			#check_overlapping_cards()
 			var target_position = get_global_mouse_position() - mouse_offset
 			dragged_card.global_position = lerp(dragged_card.global_position, target_position, lerp_speed * delta)
 		
