@@ -8,6 +8,7 @@ extends Node2D
 @export var tween_speed: float = 0.2
 
 var cards: Array[Node2D] = []
+var tween_running: bool = false
 
 func _process(_delta: float) -> void:
 	# Toggle visibility depending on bounds
@@ -48,19 +49,33 @@ func move_right() -> void:
 	_shift(1)
 
 func _realign_cards() -> void:
+	if tween_running:
+		return
 	if cards.is_empty():
 		return
-
+		
+	tween_running = true
 	var x = left_bound.global_position.x
+	var tweens: Array[Tween] = []
+	
 	for card in cards:
 		card.z_index = 0
 		var target_pos = Vector2(x, global_position.y)
 		var tween = create_tween()
 		tween.tween_property(card, "global_position", target_pos, tween_speed)
+		tweens.append(tween)
 		x += card_width + spacing
+	tweens.back().finished.connect(func(): tween_running = false)
 
 func _shift(dir: int) -> void:
+	if tween_running:
+		return
+	tween_running = true
 	var delta_x = card_width * dir
+	var tweens: Array[Tween] = []
 	for card in cards:
 		var tween = create_tween()
 		tween.tween_property(card, "global_position", card.global_position + Vector2(delta_x, 0), tween_speed)
+		tweens.append(tween)
+	
+	tweens.back().finished.connect(func(): tween_running = false)
