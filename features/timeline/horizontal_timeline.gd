@@ -49,23 +49,15 @@ func move_right() -> void:
 	_shift(1)
 
 func _realign_cards() -> void:
-	if tween_running:
-		return
 	if cards.is_empty():
 		return
 		
-	tween_running = true
 	var x = left_bound.global_position.x
-	var tweens: Array[Tween] = []
 	
 	for card in cards:
 		card.z_index = 0
-		var target_pos = Vector2(x, global_position.y)
-		var tween = create_tween()
-		tween.tween_property(card, "global_position", target_pos, tween_speed)
-		tweens.append(tween)
+		card.global_position = Vector2(x, global_position.y)
 		x += card_width + spacing
-	tweens.back().finished.connect(func(): tween_running = false)
 
 func _shift(dir: int) -> void:
 	if tween_running:
