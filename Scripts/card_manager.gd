@@ -7,7 +7,6 @@ var right_clicked_cards: Array
 var card_to_open: Card
 var selected_card: Card
 var dragged_card: Card = null
-var dragged_card_return_pos: Vector2
 var lerp_speed: int = 25
 var mouse_offset: Vector2
 @onready var boundary_right = $BoundaryRight
@@ -28,7 +27,7 @@ func _physics_process(delta):
 			dragged_card.global_position = lerp(dragged_card.global_position, target_position, lerp_speed * delta)
 		
 		if click_to_drop == false:
-			if Input.is_action_just_released("left_click"):
+			if Input.is_action_just_released("left_click") && dragged_card != null:
 				drop_card()
 		
 		if Input.is_action_just_pressed("left_click"):
@@ -54,8 +53,6 @@ func _input(event):
 				dragged_card = get_highest_z_level_card(clicked_cards)
 			else:
 				dragged_card = clicked_cards[0]
-			
-			dragged_card_return_pos = dragged_card.global_position
 		## Getting the mouse offset so that card doesn't snap to the center
 		if dragged_card:
 			EventBus.card_dragged.emit(dragged_card)
@@ -81,6 +78,7 @@ func _input(event):
 func drop_card() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	EventBus.card_dropped.emit(dragged_card)
+	check_boundaries(dragged_card)
 	dragged_card = null
 	clicked_cards.clear()
 
@@ -108,27 +106,19 @@ func _on_validate_successful(_batch_number, cards):
 
 #region Card Boundaries
 ## These boundaries make sure that the cards don't leave the play area
-## There is some weird bug where it's sometimes possible to drag cards outside the bounds but I can't reproduce it reliably
-## There is probably a better way to do this, maybe it should be done with coordinates instead of collision?
-
-func _on_boundary_right_area_entered(area):
-	if dragged_card && area == dragged_card:
-		dragged_card.global_position.x = boundary_right.global_position.x - 80
-		drop_card()
+func check_boundaries(card):
+	var horizontal_offset = 75
+	var vertical_offset = 80
+	
+	if card.global_position.x > boundary_right.global_position.x:
+		card.global_position.x = boundary_right.global_position.x - horizontal_offset
 		
-func _on_boundary_left_area_entered(area):
-	if dragged_card && area == dragged_card:
-		dragged_card.global_position.x = boundary_left.global_position.x + 80
-		drop_card()
-
-func _on_boundary_bottom_area_entered(area):
-	if dragged_card && area == dragged_card:
-		dragged_card.global_position.y = boundary_bottom.global_position.y - 120
-		drop_card()
+	if card.global_position.x < boundary_left.global_position.x:
+		card.global_position.x = boundary_left.global_position.x + horizontal_offset
+	
+	if card.global_position.y < boundary_top.global_position.y:
+		card.global_position.y = boundary_top.global_position.y + vertical_offset
 		
-func _on_boundary_top_area_entered(area):
-	if dragged_card && area == dragged_card:
-		dragged_card.global_position.y = boundary_top.global_position.y + 130
-		drop_card()
-
+	if card.global_position.y > boundary_bottom.global_position.y:
+		card.global_position.y = boundary_bottom.global_position.y - vertical_offset
 #endregion
