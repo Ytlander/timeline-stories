@@ -45,7 +45,7 @@ func check_overlapping_cards():
 
 ## We use the input event to sort the cards so that it doesn't happen every frame like it did when I had this 
 ## logic in the physics process loop.
-func _input(event):
+func _input(_event):
 	if Input.is_action_just_pressed("left_click"):
 		await get_tree().process_frame #Need to wait for the clicked_cards array to populate
 		if !clicked_cards.is_empty():
@@ -90,8 +90,7 @@ func get_highest_z_level_card(cards: Array):
 
 ##This will fire once for every overlapping card that is clicked on. Therefore we save all the cards in an array	
 func _on_card_clicked(card):
-	if !card.locked:
-		clicked_cards.append(card)
+	clicked_cards.append(card)
 
 func _on_card_right_clicked(card):
 	if dragged_card == null:
