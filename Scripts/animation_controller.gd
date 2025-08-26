@@ -1,5 +1,5 @@
-##I don't know if there is any point to this script, 
-##maybe this logic should just be on the card_manager instead?
+## This script is deprecated and not used in the project anymore
+
 
 extends Node
 

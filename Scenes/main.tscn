@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://cxkgkg0ts864s" path="res://Scripts/card_manager.gd" id="2_bo1nx"]
 [ext_resource type="Script" uid="uid://1rwkskq6tj2n" path="res://Scripts/spawner.gd" id="2_fdnlq"]
+[ext_resource type="Script" uid="uid://ccjqutju55xwe" path="res://Scripts/card_graphics.gd" id="2_hpc6h"]
 [ext_resource type="PackedScene" uid="uid://ddyng28usspt6" path="res://Scenes/event_text_controller.tscn" id="3_8gbba"]
 [ext_resource type="Theme" uid="uid://gtweqjsmt5k" path="res://default_ui_theme.tres" id="3_d1ilt"]
 [ext_resource type="PackedScene" uid="uid://6bk3cflxuf7g" path="res://Scenes/StoryCards/Batch1/lab_elevator.tscn" id="4_6bp64"]
-[ext_resource type="Script" uid="uid://bxsr1lvutq7ve" path="res://Scripts/animation_controller.gd" id="4_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://bn61qjgsu8t5t" path="res://Scenes/StoryCards/Batch1/matthew_watching.tscn" id="5_344ge"]
 [ext_resource type="PackedScene" uid="uid://b5eoxyjrmjqb" path="res://Scenes/StoryCards/Batch1/the_note.tscn" id="6_ynf5e"]
 [ext_resource type="PackedScene" uid="uid://d1ruk1rvggxaa" path="res://Scenes/StoryCards/Batch2/locked_lab.tscn" id="7_hibaj"]
@@ -72,6 +72,9 @@ position = Vector2(544, 782)
 position = Vector2(549, 28)
 rotation = 3.14159
 
+[node name="card_graphics" type="Node" parent="Card Manager"]
+script = ExtResource("2_hpc6h")
+
 [node name="Spawner" type="Node2D" parent="."]
 script = ExtResource("2_fdnlq")
 batch_1 = Array[PackedScene]([ExtResource("7_hptm8"), ExtResource("5_344ge"), ExtResource("4_6bp64"), ExtResource("6_ynf5e")])
@@ -111,9 +114,6 @@ The goal is to arrange the cards in chronological order. When all cards are in t
 Use Q and E to scroll through the cards on the timeline
 
 Right click to open and read cards to figure out the order of events[/left]"
-
-[node name="AnimationController" type="Node" parent="."]
-script = ExtResource("4_jjvhh")
 
 [node name="LabElevator" parent="." instance=ExtResource("4_6bp64")]
 position = Vector2(228, 183)

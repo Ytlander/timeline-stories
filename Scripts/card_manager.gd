@@ -100,9 +100,6 @@ func _on_card_right_clicked(card):
 func _on_validate_successful(_batch_number, cards):
 	for card in cards:
 		card.locked = true
-	
-	if selected_card:
-		selected_card.selected_sprite.visible = false
 
 #region Card Boundaries
 ## These boundaries make sure that the cards don't leave the play area
