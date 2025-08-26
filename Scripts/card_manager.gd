@@ -24,16 +24,11 @@ func _physics_process(delta):
 		
 		if click_to_drop == false:
 			if Input.is_action_just_released("left_click"):
-				Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-				EventBus.card_dropped.emit(dragged_card)
-				dragged_card = null
-				clicked_cards.clear()
+				drop_card()
 		
 		if Input.is_action_just_pressed("left_click"):
 			if click_to_drop && dragged_card != null:
-				Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-				dragged_card = null
-				clicked_cards.clear()
+				drop_card()
 
 func check_overlapping_cards():
 		var overlapping_cards = dragged_card.get_overlapping_areas()
@@ -76,6 +71,11 @@ func _input(event):
 			selected_card = card_to_open
 			card_to_open = null
 
+func drop_card() -> void:
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	EventBus.card_dropped.emit(dragged_card)
+	dragged_card = null
+	clicked_cards.clear()
 
 ##This sorts an array based on Z index. Maybe move this into a utility function in the future? Could be used for multiple things. 
 func get_highest_z_level_card(cards: Array):
