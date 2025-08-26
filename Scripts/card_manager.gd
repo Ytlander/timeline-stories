@@ -7,8 +7,13 @@ var right_clicked_cards: Array
 var card_to_open: Card
 var selected_card: Card
 var dragged_card: Card = null
+var dragged_card_return_pos: Vector2
 var lerp_speed: int = 25
 var mouse_offset: Vector2
+@onready var boundary_right = $BoundaryRight
+@onready var boundary_left = $BoundaryLeft
+@onready var boundary_bottom = $BoundaryBottom
+@onready var boundary_top = $BoundaryTop
 
 func _ready():
 	EventBus.card_clicked.connect(_on_card_clicked)
@@ -18,7 +23,7 @@ func _ready():
 func _physics_process(delta):
 		if dragged_card != null:
 			Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
-			dragged_card.z_index = 20
+			check_overlapping_cards()
 			var target_position = get_global_mouse_position() - mouse_offset
 			dragged_card.global_position = lerp(dragged_card.global_position, target_position, lerp_speed * delta)
 		
@@ -49,6 +54,8 @@ func _input(event):
 				dragged_card = get_highest_z_level_card(clicked_cards)
 			else:
 				dragged_card = clicked_cards[0]
+			
+			dragged_card_return_pos = dragged_card.global_position
 		## Getting the mouse offset so that card doesn't snap to the center
 		if dragged_card:
 			EventBus.card_dragged.emit(dragged_card)
@@ -98,3 +105,30 @@ func _on_validate_successful(_batch_number, cards):
 	
 	if selected_card:
 		selected_card.selected_sprite.visible = false
+
+#region Card Boundaries
+## These boundaries make sure that the cards don't leave the play area
+## There is some weird bug where it's sometimes possible to drag cards outside the bounds but I can't reproduce it reliably
+## There is probably a better way to do this, maybe it should be done with coordinates instead of collision?
+
+func _on_boundary_right_area_entered(area):
+	if dragged_card && area == dragged_card:
+		dragged_card.global_position.x = boundary_right.global_position.x - 80
+		drop_card()
+		
+func _on_boundary_left_area_entered(area):
+	if dragged_card && area == dragged_card:
+		dragged_card.global_position.x = boundary_left.global_position.x + 80
+		drop_card()
+
+func _on_boundary_bottom_area_entered(area):
+	if dragged_card && area == dragged_card:
+		dragged_card.global_position.y = boundary_bottom.global_position.y - 120
+		drop_card()
+		
+func _on_boundary_top_area_entered(area):
+	if dragged_card && area == dragged_card:
+		dragged_card.global_position.y = boundary_top.global_position.y + 130
+		drop_card()
+
+#endregion

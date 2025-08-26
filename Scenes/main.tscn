@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://d4llv7opqcv4p"]
+[gd_scene load_steps=36 format=3 uid="uid://d4llv7opqcv4p"]
 
 [ext_resource type="Script" uid="uid://cxkgkg0ts864s" path="res://Scripts/card_manager.gd" id="2_bo1nx"]
 [ext_resource type="Script" uid="uid://1rwkskq6tj2n" path="res://Scripts/spawner.gd" id="2_fdnlq"]
@@ -35,6 +35,8 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6iyac"]
 bg_color = Color(0.61, 0.467667, 0.183, 1)
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_hpc6h"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7k868"]
 size = Vector2(997, 222)
 
@@ -56,6 +58,33 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_6iyac")
 
 [node name="Card Manager" type="Node2D" parent="."]
 script = ExtResource("2_bo1nx")
+
+[node name="BoundaryRight" type="Area2D" parent="Card Manager"]
+position = Vector2(858, 359)
+rotation = -1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Card Manager/BoundaryRight"]
+shape = SubResource("WorldBoundaryShape2D_hpc6h")
+
+[node name="BoundaryLeft" type="Area2D" parent="Card Manager"]
+position = Vector2(-12, 359)
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Card Manager/BoundaryLeft"]
+shape = SubResource("WorldBoundaryShape2D_hpc6h")
+
+[node name="BoundaryBottom" type="Area2D" parent="Card Manager"]
+position = Vector2(544, 853)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Card Manager/BoundaryBottom"]
+shape = SubResource("WorldBoundaryShape2D_hpc6h")
+
+[node name="BoundaryTop" type="Area2D" parent="Card Manager"]
+position = Vector2(549, -21)
+rotation = 3.14159
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Card Manager/BoundaryTop"]
+shape = SubResource("WorldBoundaryShape2D_hpc6h")
 
 [node name="Spawner" type="Node2D" parent="."]
 script = ExtResource("2_fdnlq")
@@ -107,7 +136,7 @@ position = Vector2(228, 183)
 position = Vector2(389, 188)
 
 [node name="TheNote" parent="." instance=ExtResource("6_ynf5e")]
-position = Vector2(550, 196)
+position = Vector2(553, 197)
 body = "Peter was nowhere to be seen but on one of the desks lay a note which Nathaniel picked up and read
 
 \"Matthew
@@ -190,6 +219,10 @@ position = Vector2(438, -2)
 [node name="Pointer" type="Node2D" parent="."]
 position = Vector2(24, 533)
 
+[connection signal="area_entered" from="Card Manager/BoundaryRight" to="Card Manager" method="_on_boundary_right_area_entered"]
+[connection signal="area_entered" from="Card Manager/BoundaryLeft" to="Card Manager" method="_on_boundary_left_area_entered"]
+[connection signal="area_entered" from="Card Manager/BoundaryBottom" to="Card Manager" method="_on_boundary_bottom_area_entered"]
+[connection signal="area_entered" from="Card Manager/BoundaryTop" to="Card Manager" method="_on_boundary_top_area_entered"]
 [connection signal="pressed" from="Timeline/CheckButton" to="Timeline" method="_on_check_button_pressed"]
 
 [editable path="CanvasLayer/EventTextController"]
