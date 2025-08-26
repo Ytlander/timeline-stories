@@ -22,13 +22,16 @@ func place_card(card: Node2D, index: int = -1) -> void:
 	if index < 0 or index > cards.size():
 		index = cards.size()
 	
-	cards.insert(index, card)
+	if card in cards:
+		remove_card(card)
+		cards.insert(index - 1, card)
+	else:
+		cards.insert(index, card)
 	_realign_cards()
 
 func remove_card(card: Node2D) -> void:
 	if card in cards:
 		cards.erase(card)
-		_realign_cards()
 
 func move_left() -> void:
 	if cards.is_empty():

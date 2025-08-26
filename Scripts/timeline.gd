@@ -6,7 +6,7 @@ var card_batch: int = 1
 
 func _ready() -> void:
 	EventBus.card_dropped.connect(_on_card_dropped)
-	EventBus.card_dragged.connect(_on_card_dragged)
+	#EventBus.card_dragged.connect(_on_card_dragged)
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("scroll_left"):
@@ -27,11 +27,14 @@ func _on_card_dropped(dropped_card: Card) -> void:
 				return
 		
 		htl.place_card(dropped_card)
-
-func _on_card_dragged(dragged_card: Card) -> void:
-	if dragged_card not in htl.cards:
 		return
-	htl.remove_card(dragged_card)
+	htl.remove_card(dropped_card)
+	htl._realign_cards()
+
+#func _on_card_dragged(dragged_card: Card) -> void:
+	#if dragged_card not in htl.cards:
+		#return
+	#htl.remove_card(dragged_card)
 
 # Example validation logic
 func _on_check_button_pressed() -> void:
