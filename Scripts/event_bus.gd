@@ -8,4 +8,4 @@ signal close_textbox
 # Timeline
 signal card_dropped(card: Card)
 signal card_dragged(card: Card)
-signal validate_successful(batch: int)
+signal validate_successful(batch: int, cards: Array)

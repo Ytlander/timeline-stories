@@ -50,7 +50,7 @@ func _on_check_button_pressed() -> void:
 			if card_batch == 6:
 				show_message("Good job, you placed all the cards in the correct order!", "Win")
 				return
-			EventBus.validate_successful.emit(card_batch)
+			EventBus.validate_successful.emit(card_batch, htl.cards)
 			card_batch += 1
 			return
 		stored_event = card.event_number

@@ -11,6 +11,7 @@ class_name Card
 
 @export var event_number: int = 0
 @export var default_z_index = 15 #Set to 15 so that it displays on top of other elements by default
+@export var locked: bool = false #Used for locking the card on the timeline so that it cannot be clicked
 
 func _ready():
 	selected_sprite.visible = false

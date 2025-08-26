@@ -85,12 +85,16 @@ func get_highest_z_level_card(cards: Array):
 
 ##This will fire once for every overlapping card that is clicked on. Therefore we save all the cards in an array	
 func _on_card_clicked(card):
-	clicked_cards.append(card)
+	if !card.locked:
+		clicked_cards.append(card)
 
 func _on_card_right_clicked(card):
 	if dragged_card == null:
 		right_clicked_cards.append(card)
 
-func _on_validate_successful(_batch_number):
+func _on_validate_successful(_batch_number, cards):
+	for card in cards:
+		card.locked = true
+	
 	if selected_card:
 		selected_card.selected_sprite.visible = false

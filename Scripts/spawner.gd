@@ -24,7 +24,7 @@ func _ready():
 	batch_array = [batch_1, batch_2, batch_3, batch_4, batch_5, batch_6]
 	spawn_position_array = [spawn_position, spawn_position_2, spawn_position_3, spawn_position_4]
 	
-func _on_validate_successful(batch_to_spawn):
+func _on_validate_successful(batch_to_spawn, _cards):
 	var current_batch = batch_array[batch_to_spawn]
 	var card_number = 0
 	for packed_card in current_batch:
