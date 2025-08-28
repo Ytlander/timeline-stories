@@ -15,7 +15,7 @@ region = Rect2(400, 600, 200, 200)
 [node name="StoryCard" type="Area2D" groups=["story_card"]]
 script = ExtResource("1_hvehd")
 body = "[left]“Sarah, wait” Matthew said and she spun around facing him. They were in the corridor just outside the guard room.
-“What is it?” her voice tense but controlled
+“What is it?” her voice tense but controlled.
 \"Did you see Peter in there? Did you understand what he was doing?\" Matthew asked her.
 \"He looked like he always does when he is working...\"
 \"Exactly! The love of his life has turned into a zombie and he is not breaking down, instead he is hyper focusing. I know they were close to figuring this out Sarah, but what if they are so close that Peter could actually save Maria and himself?\"

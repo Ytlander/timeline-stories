@@ -14,7 +14,7 @@ region = Rect2(600, 600, 200, 200)
 
 [node name="StoryCard" type="Area2D" groups=["story_card"]]
 script = ExtResource("1_epsj3")
-body = "\"Peace offering?\" Matthew said, approaching Sarah while holding the bottle up to her. Sarah turned around, sweat dripping down her nose and her uniform stained and wrinkled from the effort. Sarah's expression softened as she realized that Matthew was not there to argue with her again.
+body = "\"Peace offering?\" Matthew said, approaching Sarah while holding the bottle up to her. Sarah turned around, sweat dripping down her nose and her uniform stained and wrinkled from the effort. Sarah's expression softened as she realized that Matthew was not here to argue with her again.
 [left]\"Matthew, I don't have time, I really appreciate the sentiment though, we'll talk when this is all over, okay?\"[/left]
 \"Why don't you let someone take over for you? Rose and Theo look quite fresh, have they been on lookout this whole time? Why don't you and Nathaniel switch with them?\" Matthew tried to catch Sarah's gaze but she just nodded toward Nathaniel and they smashed the home made battering ram against the double doors of the lab one more time.
 [left]\"Come on, I made this horrible imitation of a Gold Rush, share it with me!\" Matthew shouted over the noise.
@@ -22,7 +22,7 @@ body = "\"Peace offering?\" Matthew said, approaching Sarah while holding the bo
 \"What the hell...\" Sarah said suddenly. \"You are right, I need a break\"
 Sarah gestured to Rose and Theo to take over for her and Nathaniel.
 \"Man I hate when your are right\" Sarah said with a smile and walked up to Matthew.
-\"Oh I know, but maybe this once I am\" he said laughing while taking the first sip and handing the flask to her. After taking the first chug she laughed. [/left]"
+\"Oh I know\" he said laughing while taking the first sip and handing the flask to her. After taking the first chug she laughed too. [/left]"
 event_number = 13
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -17,7 +17,7 @@ script = ExtResource("1_f8wj7")
 body = "\"It's not quite a Gold Rush, phew, it's foul!\" Sarah said but kept laughing and passed the bottle back to Matthew who put the flask up to his mouth, only sipping the drink and then giving back the bottle to Sarah. He hoped the commotion of losing their leader would give Peter enough time to finish his work. The others lacked the training and discipline that Sarah had, they had all been office workers before all of this. They passed the flask back and forth a few more times to the rhythmic crashing of the battering ram against the door. Matthew was impressed at how well Peter had barricaded himself in there.
 
 [left]\"Man, you look funny. This is one funny situation!\" Sarah said with a slurred voice.[/left]
-\"Hey, let's sit down on the floor for a little bit\" he said and Sarah listened to him, a clear sign that the drink was taking effect. After sitting down, Sarah took another big swig of the flask, her inhibitions gone at this point, a few seconds later she slumped over and fell asleep."
+\"Hey, let's sit down on the floor for a little bit\" Matthew said and Sarah listened to him, a clear sign that the drink was taking effect. After sitting down, Sarah took another big swig of the flask, her inhibitions gone at this point, a few seconds later she slumped over and fell asleep."
 event_number = 14
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

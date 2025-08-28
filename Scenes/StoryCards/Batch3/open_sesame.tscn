@@ -14,7 +14,7 @@ region = Rect2(200, 800, 200, 200)
 
 [node name="StoryCard" type="Area2D" groups=["story_card"]]
 script = ExtResource("1_c5qtq")
-body = "As Matthew came to, he quickly remembered what had happened. He looked around the small room, it was basically just two beds and he saw Sarah fast asleep on the other one. He had no idea how long he had been asleep himself and was dying to know how Peters work had progressed. He ran over to Maria's lab and as he was about to round the last corner leading up to the lab when a loud bang from an explosion knocked him off his feet. He scrambled back up to his feet and slowly peered around the corner. The double doors to the lab was open, dust and smoke mingled in the opening. He moved as quickly as he could and when he entered the doorway to the lab, Theo, Rose and Nathaniel stood inside, slightly obscured by the smoke that stung in Matthew's eyes."
+body = "As Matthew came to, he quickly remembered what had happened. He looked around the small room, it was basically just two beds and he saw Sarah fast asleep on the other one. He had no idea how long he had been asleep himself and was dying to know how Peter's work had progressed. He ran over to Maria's lab and as he was about to round the last corner a loud bang from an explosion knocked him off his feet. He scrambled back up and slowly peered around the corner. The double doors to the lab was open, dust and smoke mingled in the opening. He moved as quickly as he could and when he entered the doorway to the lab, Theo, Rose and Nathaniel stood inside, slightly obscured by the smoke that stung in Matthew's eyes."
 event_number = 17
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -14,7 +14,7 @@ region = Rect2(1000, 800, 200, 200)
 
 [node name="StoryCard" type="Area2D" groups=["story_card"]]
 script = ExtResource("1_qx0ge")
-body = "Matthews head was racing. How could he get the supplies to Peter, could he convince Sarah to let him speak to Pete and deliver the alcohol without them barging in there? He had to try right? He left the lab coat in the guard room and ran toward the lab again. 
+body = "Matthew's head was racing. How could he get the supplies to Peter, could he convince Sarah to let him speak to Pete and deliver the alcohol without them barging in there? He had to try right? He left the lab coat in the guard room and ran toward the lab again. 
 
 When Matthew reached the lab Sarah and the others was just about to smash the door with a locker tied down on top of a rolling table.
 

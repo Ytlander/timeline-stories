@@ -14,7 +14,7 @@ region = Rect2(200, 600, 200, 200)
 
 [node name="StoryCard" type="Area2D" groups=["story_card"]]
 script = ExtResource("1_im35m")
-body = "\"No Matthew, you need to listen to me\" Sarah said, her voice steady and clear. \"I am the commanding officer here, there is a ventilation shaft running from that cupboard where he locked Maria. What if she births a slug and lets it loose? It can reach every part of the facility through those vents. We need to end this now!\"
+body = "\"No Matthew, you need to listen to me\" Sarah said, her voice steady and clear. \"I am the commanding officer here, there is a ventilation shaft running from that cupboard where he locked Maria. What if she births a slug? It can reach every part of the facility through those vents. We need to end this now!\"
 Sarah had planted both her feet steadily on the ground, staring Matthew down. He didn't say anything and after a few silent seconds he turned around and left them.
 \"Nathaniel, Theo. Scrounge together what you can find that can be used to break this door down. See if you can find something that can be used as a ram\" Sarah said."
 event_number = 8

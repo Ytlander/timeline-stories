@@ -14,7 +14,7 @@ region = Rect2(1200, 1000, 200, 200)
 
 [node name="StoryCard" type="Area2D" groups=["story_card"]]
 script = ExtResource("1_w8v1x")
-body = "The facility was quiet in these parts and no one saw Matthew as he slipped into the supply closet on the main floor. He quickly found the tranquilizer he was looking for, this would put Sarah out of commission for at least a few hours. He shook his head thinking about what he was about to do. He and Sarah had been through hell and it was many times over because of her that they hadn't succumbed. Her stubbornes was her greatest asset but this time she was in the wrong and since she wouldn't listen to reason, he was left with no choice.
+body = "The facility was quiet in these parts and no one saw Matthew as he slipped into the supply closet on the main floor. He quickly found the tranquilizer he was looking for, this would put Sarah out of commission for at least a few hours. He shook his head thinking about what he was about to do. He and Sarah had been through hell and it was many times because of her that they hadn't succumbed. Her stubbornes was her greatest asset but this time she was in the wrong and since she wouldn't listen to reason, he was left with no choice.
 
 He took a quick detour into the kitchen and mixed the tranquilizer with lemon juice, some vodka and sugar — a weak imitation of the Gold Rush. Maybe that would be enough to make Sarah drink it with him as it was her favorite cocktail.
 
