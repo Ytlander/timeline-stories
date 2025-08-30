@@ -69,7 +69,7 @@ func _shift(dir: int) -> void:
 	if tween_running:
 		return
 	tween_running = true
-	var delta_x = card_width * dir
+	var delta_x = (card_width + spacing) * dir
 	var tweens: Array[Tween] = []
 	for card in cards:
 		var tween = create_tween()
