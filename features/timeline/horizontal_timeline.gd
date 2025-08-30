@@ -54,9 +54,12 @@ func move_right() -> void:
 func _realign_cards() -> void:
 	if cards.is_empty():
 		return
-		
-	var x = left_bound.global_position.x
-	
+	var x
+	if cards.size() == 1:
+		x = left_bound.global_position.x
+	else:
+		x = cards[0].global_position.x
+			
 	for card in cards:
 		card.z_index = 0
 		card.global_position = Vector2(x, global_position.y)
