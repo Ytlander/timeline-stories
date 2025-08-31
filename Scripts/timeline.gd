@@ -27,7 +27,6 @@ func _on_card_dropped(dropped_card: Card) -> void:
 				return
 		
 		htl.place_card(dropped_card)
-		htl._realign_cards()
 		return
 	htl._realign_cards()
 

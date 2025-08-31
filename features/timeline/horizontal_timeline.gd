@@ -22,11 +22,9 @@ func place_card(card: Node2D, index: int = -1) -> void:
 	if index < 0 or index > cards.size():
 		index = cards.size()
 	
-	if card in cards:
-		remove_card(card)
-		cards.insert(index - 1, card)
-	else:
-		cards.insert(index, card)
+	cards.insert(index, card)
+	if cards[0] == card:
+		card.global_position.x = left_bound.global_position.x
 	_realign_cards()
 
 func remove_card(card: Node2D) -> void:
@@ -52,6 +50,7 @@ func move_right() -> void:
 	_shift(1)
 
 func _realign_cards() -> void:
+	await get_tree().process_frame
 	if cards.is_empty():
 		return
 	var x
