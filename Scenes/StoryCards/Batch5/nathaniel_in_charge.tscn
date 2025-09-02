@@ -10,7 +10,7 @@ size = Vector2(126, 192)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lev7e"]
 atlas = ExtResource("3_73rgy")
-region = Rect2(200, 1200, 200, 200)
+region = Rect2(600, 400, 200, 200)
 
 [node name="StoryCard" type="Area2D" groups=["story_card"]]
 script = ExtResource("1_5pblf")
