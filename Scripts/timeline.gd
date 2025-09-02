@@ -40,18 +40,17 @@ func _on_check_button_pressed() -> void:
 	var all_cards = get_tree().get_nodes_in_group("story_card")
 	for story_card in all_cards:
 		if story_card not in htl.cards:
-			show_message("Not all cards are placed on the timeline", "Error")
+			EventBus.error_message.emit("Error", "[left]Not all cards are placed on the timeline[/left]")
+			#show_message("Not all cards are placed on the timeline", "Error")
 			return
 	
 	var stored_event: int = -1
 	for card in htl.cards:
 		if card.event_number < stored_event:
-			show_message("Wrong order, try again!", "Incorrect")
+			EventBus.error_message.emit("Incorrect", "[left]Wrong order, try again![/left]")
+			#show_message("Wrong order, try again!", "Incorrect")
 			return
 		if card == htl.cards.back():
-			if card_batch == 6:
-				show_message("Good job, you placed all the cards in the correct order!", "Win")
-				return
 			EventBus.validate_successful.emit(card_batch, htl.cards)
 			card_batch += 1
 			return

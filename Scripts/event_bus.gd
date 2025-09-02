@@ -9,3 +9,4 @@ signal close_textbox
 signal card_dropped(card: Card)
 signal card_dragged(card: Card)
 signal validate_successful(batch: int, cards: Array)
+signal error_message(header:String, message:String)
