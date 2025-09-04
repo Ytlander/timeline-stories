@@ -15,7 +15,7 @@ region = Rect2(200, 0, 200, 200)
 [node name="StoryCard" type="Area2D" groups=["story_card"]]
 script = ExtResource("1_biug8")
 body = "Peter was working at his station the next morning as Maria came up behind him, putting her arms around him, laying her cheek flat against his upper back. She reached up and kissed him on the neck and a familiar tingling spread up his head and nestled in the roots of his hair.
-[left]\"I love you\" he said and she murmured the same back to him. [/left]
+[left]\"I love you,\" he said and she murmured the same back to him. [/left]
 
 Then he felt a sudden jolt of pain as Maria sunk her teeth into his neck. Instinctively he thrust his elbow back, pushing her off of him but he felt the skin rip and as he turned around a flap of his flesh hung from her gritted teeth. He grabbed his lab coat just to have something to shield himself with and she lunged for him with animalistic ferocity. Peter barely dodged out of the way and she slammed into the desk behind him."
 event_number = 2

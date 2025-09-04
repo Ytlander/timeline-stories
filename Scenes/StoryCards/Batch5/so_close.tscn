@@ -16,10 +16,10 @@ region = Rect2(200, 600, 200, 200)
 script = ExtResource("1_rijsb")
 body = "The others looked at each other and then realized that Matthew stood in the doorway. The silence was like another person with them in the room, taking up all the available space but Matthew couldn't stand it for long.
 
-\"Please, just let me do it\" Matthew pleaded with the others. Again silence took it's place among the group. Theo fidgeted with the shotgun in his hands. Finally Rose started talking.
-\"I think we should let him work. If Peter actually made it then maybe Matthew can save both him and Maria\"
-\"I think I can, look it's all here\" Matthew had entered the room and picked up the instructions for how to mix the cure that lay beside the note. The others looked at each other and nodded.
-\"We'll let you work, under strict supervision, we know what you did to Sarah and you will have to answer for it later\" Nathaniel said.
+\"Please, just let me do it.\" Matthew pleaded with the others. Again silence took it's place among the group. Theo fidgeted with the shotgun in his hands. Finally Rose started talking.
+\"I think we should let him work. If Peter actually made it then maybe Matthew can save both him and Maria.\"
+\"I think I can, look it's all here.\" Matthew had entered the room and picked up the instructions for how to mix the cure that lay beside the note. The others looked at each other and nodded.
+\"We'll let you work, under strict supervision, we know what you did to Sarah and you will have to answer for it later.\" Nathaniel said.
 [left]Matthew didn't answer and got to work.[/left]"
 event_number = 19
 

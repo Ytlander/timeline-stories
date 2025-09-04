@@ -15,9 +15,9 @@ region = Rect2(400, 600, 200, 200)
 [node name="StoryCard" type="Area2D" groups=["story_card"]]
 script = ExtResource("1_csry7")
 body = "A couple of grueling hours later the cure was ready, two sturdy syringes filled with the stuff. Matthew looked at the others with a smile but froze as he heard a familiar voice.
-\"Stop\" the sharpness of Sarah's tone cut through the room \"Matthew drugged me, he cannot be trusted!\"
+\"Stop!\" The sharpness of Sarah's tone cut through the room. \"Matthew drugged me, he cannot be trusted!\"
 \"I had to, you wouldn't listen, please we have the cure, let me administer it to Peter and Maria. We can save them both!\" Matthew said. Sarah looked at him and he could see how his betrayal was burning away at her. He had never defied her before, she had always been in charge long before being captain of the guard. Long before they even got to this facility. After staring him down Sarahs expression finally softened a bit. Matthew thought that it was this defiance that made her realize that maybe she was wrong. She knew that he would never do this if he didn't really believe that he was right.
-[left]\"Alright, I won't stand in you way, but I need a shotgun so that I can defend you if anything goes south\"
+[left]\"Alright, I won't stand in you way, but I need a shotgun so that I can defend you if anything goes south.\"
 \"Don't shoot them!\" Matthew said, high notes of panic in his voice.[/left]"
 event_number = 20
 

@@ -14,10 +14,10 @@ region = Rect2(0, 800, 200, 200)
 
 [node name="StoryCard" type="Area2D" groups=["story_card"]]
 script = ExtResource("1_sguv0")
-body = "[left]\"Look, it's already taking effect\" Sarah said \"He is already getting better, I can't believe it!\"
-\"You did it Matthew!\" it was Peter's voice. \"Maria!\" and with that he ran toward the cupboard.
+body = "[left]\"Look, it's already taking effect,\" Sarah said \"he is already getting better, I can't believe it!\"
+\"You did it Matthew!\" It was Peter's voice. \"Maria!\" and with that he ran toward the cupboard.
 \"Careful!\" Sarah said but Peter didn't listen and tore the door open. Inside Maria sat on the floor crying.
-\"You okay?\" Peter asked and sat down beside her
+\"You okay?\" Peter asked and sat down beside her.
 \"I think so, but what did I do to you?\" she said between sobs as Peter held her.
 \"You saved me, you saved us all!\"[/left]
 "

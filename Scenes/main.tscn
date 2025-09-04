@@ -115,26 +115,17 @@ Use Q and E or the scroll wheel on your mouse to scroll through the cards on the
 
 Right click to open and read cards to figure out the order of events[/left]"
 
+[node name="zombie_outbreak" parent="." instance=ExtResource("7_hptm8")]
+position = Vector2(88, 186)
+
 [node name="LabElevator" parent="." instance=ExtResource("4_6bp64")]
-position = Vector2(228, 183)
+position = Vector2(238, 185)
 
 [node name="MatthewWatching" parent="." instance=ExtResource("5_344ge")]
-position = Vector2(389, 188)
+position = Vector2(405, 186)
 
 [node name="TheNote" parent="." instance=ExtResource("6_ynf5e")]
-position = Vector2(553, 197)
-body = "Peter was nowhere to be seen but on one of the desks lay a note which Nathaniel picked up and read
-
-\"Matthew
-
-I was so close but I didn’t have time to synthesize the cure. The instructions are all here. Please help me finish the work. I have locked myself in the bathroom and Maria is in the supply closet. Don’t let them kill us, the cure can save us all.
-
-
-[left]Your friend and colleague[/left]
-Peter\""
-
-[node name="zombie_outbreak" parent="." instance=ExtResource("7_hptm8")]
-position = Vector2(78, 181)
+position = Vector2(554, 186)
 
 [node name="Timeline" parent="." instance=ExtResource("8_344ge")]
 position = Vector2(340, 536)
